@@ -14,10 +14,10 @@ $(document).ready(function(e) {
     
 		$(document).ready(function(e) {
 		
-			$('#cadastro_treinador_link').click(function(e) { //carregando parte de uma pagina na pagina principal
+			$('#mensagens_geral_link').click(function(e) { //carregando parte de uma pagina na pagina principal
 				e.preventDefault();
 				//loader
-				$('#loader').load('viewers/cadastro/treinador.lista.php');
+				$('#loader').load('viewers/mensagens.geral.lista.php');
 			});
 			
 		});

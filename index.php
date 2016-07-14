@@ -6,7 +6,7 @@
     <title>Sistema</title>
     
     <link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/treinamento.css">
+	<link rel="stylesheet" href="css/mural.css">
 </head>
 
 <body>
@@ -32,18 +32,12 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> MENSAGENS <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#" id="cadastro_trainee_link">Nova Mensagem</a></li>
-                <li><a href="#" id="cadastro_treinador_link">Pessoal</a></li>
-                <li><a href="#" id="cadastro_treinamento_link">Geral</a></li>
+                <li><a href="#" id="nova_mensagem_link">Nova Mensagem</a></li>
+                <li><a href="#" id="mensagens_pessoais_link">Pessoal</a></li>
+                <li><a href="#" id="mensagens_geral_link">Geral</a></li>
               </ul>
             </li>
-            
-             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> USUARIOS <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#" id="gerenciamento_aula_link">Gerenciar</a></li>
-              </ul>
-            </li>
+            <li><a href="#" id="gerenciamento_usuario_link">GERENCIAR USUÁRIOS</a></li>
             
             <li><a href="#" id="getout"><i class="fa fa-sign-out" aria-hidden="true"></i> SAIR </a></li>
           </ul>
@@ -54,14 +48,13 @@
     
     <main class="container-fluid" id="loader">
     
-    	<h1 id="h1teste">Teste</h1>
-      
+    	<h1 id="h1teste">Teste</h1>    
     
     </main>
    	
     
 	
-    <footer class="treinamentofooter">
+    <footer id="footer" class="treinamentofooter container-fluid">
     	<p class="text-center"> Copyright © Next Step 2016. Todos os direitos reservados. </p>
     </footer>
 	
@@ -70,6 +63,7 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/timeline.js"></script>
     <script src="js/jquerymask.min.js"></script>
     
 </body>
