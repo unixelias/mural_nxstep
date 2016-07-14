@@ -8,6 +8,7 @@
 		private $id_mensagem;
 		private $id_usuario;
 		private $conteudo_mensagem;
+		private $assunto_mensagem;
 		private $hora_mensagem;
 		private $data_mensagem;
 
@@ -15,10 +16,11 @@
 		//setters
 
 		//Funcao que seta uma instancia da classe
-		public function SetValues($id_mensagem, $id_usuario, $conteudo_mensagem, $hora_mensagem, $data_mensagem) {
+		public function SetValues($id_mensagem, $id_usuario, $conteudo_mensagem, $assunto_mensagem, $hora_mensagem, $data_mensagem) {
 			$this->id_mensagem = $id_mensagem;
 			$this->id_usuario = $id_usuario;
 			$this->conteudo_mensagem = $conteudo_mensagem;
+			$this->assunto_mensagem = $assunto_mensagem;
 			$this->hora_mensagem = $hora_mensagem;
 			$this->data_mensagem = $data_mensagem;
 
@@ -36,6 +38,7 @@
 				 			id_mensagem,
 				 			id_usuario,
 				 			conteudo_mensagem,
+							assunto_mensagem,
 				 			hora_mensagem,
 				 			data_mensagem
 						  )
@@ -44,6 +47,7 @@
 				 			'$this->id_mensagem',
 				 			'$this->id_usuario',
 				 			'$this->conteudo_mensagem',
+							'$this->assunto_mensagem',
 				 			'$this->hora_mensagem',
 				 			'$this->data_mensagem'
 					);
@@ -63,6 +67,7 @@
 					 t1.id_mensagem,
 					 t1.id_usuario,
 					 t1.conteudo_mensagem,
+					 t1.assunto_mensagem,
 					 t1.hora_mensagem,
 					 t1.data_mensagem
 				FROM
@@ -89,6 +94,7 @@
 					 t1.id_mensagem,
 					 t1.id_usuario,
 					 t1.conteudo_mensagem,
+					 t1.assunto_mensagem,
 					 t1.hora_mensagem,
 					 t1.data_mensagem
 				FROM
@@ -128,6 +134,7 @@
 					 t1.id_mensagem,
 					 t1.id_usuario,
 					 t1.conteudo_mensagem,
+					 t1.assunto_mensagem,
 					 t1.hora_mensagem,
 					 t1.data_mensagem
 				FROM
@@ -153,6 +160,7 @@
 
 				  id_usuario = '$this->id_usuario',
 				  conteudo_mensagem = '$this->conteudo_mensagem',
+				  assunto_mensagem = '$this->assunto_mensagem',
 				  hora_mensagem = '$this->hora_mensagem',
 				  data_mensagem = '$this->data_mensagem'
 
@@ -239,6 +247,7 @@
 			$this->id_mensagem;
 			$this->id_usuario;
 			$this->conteudo_mensagem;
+			$this->assunto_mensagem;
 			$this->hora_mensagem;
 			$this->data_mensagem;
 
@@ -250,6 +259,7 @@
 			$this->id_mensagem;
 			$this->id_usuario;
 			$this->conteudo_mensagem;
+			$this->assunto_mensagem;
 			$this->hora_mensagem;
 			$this->data_mensagem;
 
