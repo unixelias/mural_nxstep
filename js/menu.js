@@ -9,57 +9,39 @@ x.innerHTML = "<span class='text-primary'>troca</span>";
 
 console.log(x);*/
 
-
 $(document).ready(function(e) {
-    
+
 		$(document).ready(function(e) {
-		
+
 			$('#mensagens_geral_link').click(function(e) { //carregando parte de uma pagina na pagina principal
 				e.preventDefault();
 				//loader
-				$('#loader').load('viewers/mensagens.geral.lista.php');
+				$('#loader').load('viewers/mensagens/mensagens.geral.lista.php');
 			});
-			
+
 		});
-		
+
 		$(document).ready(function(e) {
-		
-			$('#cadastro_trainee_link').click(function(e) { //carregando parte de uma pagina na pagina principal
+
+			$('#nova_mensagem_link').click(function(e) { //carregando parte de uma pagina na pagina principal
 				e.preventDefault();
 				//loader
-				$('#loader').load('viewers/cadastro/trainee.lista.php');
+				$('#loader').load('viewers/mensagens/mensagem.nova.php');
 			});
-			
+
 		});
-		
+
 		$(document).ready(function(e) {
-		
-			$('#cadastro_treinamento_link').click(function(e) { //carregando parte de uma pagina na pagina principal
+
+			$('#mensagens_pessoais_link').click(function(e) { //carregando parte de uma pagina na pagina principal
 				e.preventDefault();
 				//loader
-				$('#loader').load('viewers/cadastro/treinamento.lista.php');
+				$('#loader').load('viewers/mensagens/mensagens.pessoais.php');
 			});
-			
+
 		});
-		
-			$(document).ready(function(e) {
-		
-			$('#gerenciamento_aula_link').click(function(e) { //carregando parte de uma pagina na pagina principal
-				e.preventDefault();
-				//loader
-				$('#loader').load('viewers/gerenciamento/aula.lista.php');
-			});
-			
-		});
-		
-			$(document).ready(function(e) {
-		
-			$('#gerenciamento_turma_link').click(function(e) { //carregando parte de uma pagina na pagina principal
-				e.preventDefault();
-				//loader
-				$('#loader').load('viewers/gerenciamento/turma.lista.php');
-			});
-			
-		});
+
+
+	
 
 });
