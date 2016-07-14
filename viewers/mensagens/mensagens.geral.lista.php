@@ -1,13 +1,13 @@
 ﻿<script>
 	$(document).ready(function(e) {
-        
+
     });
 
 
 </script>
 
 <?php
-	require_once "../engine/config.php";
+	require_once "../../engine/config.php";
 ?>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,18 +41,18 @@
 
 <?php
 	$Item = new Mensagem; //instancia Mensagem
-	$Item = $Item->ReadAll(); //lê todos os registros no BD
+	$Item = $Item->ReadAll_JointInfo(); //lê todos os registros no BD
 	$Lado = false;
 	if(empty($Item)){
 		?>
         	<h4 class="alert-warning">Nenhum dado encontrado!</h4>
-        <?php	
+        <?php
 	}
 	else{
 		?>
         <h2>Pool Geral de Mensagens NextStep</h2>
         	<ul class="timeline">
-            	<li>        
+            	<li>
 				<?php
 					foreach($Item as $itemRow){
 						if ($Lado === false){
@@ -64,7 +64,7 @@
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4><?php echo $itemRow['id_usuario']; ?></h4>
+                                <h4><?php echo $itemRow['nome_usuario']; ?></h4>
                             </div>
                             <div class="timeline-body">
                                 <p><?php echo $itemRow['conteudo_mensagem']; ?></p>
@@ -94,7 +94,7 @@
                             </div>
                         </div>
                         </li>
-					<?php						
+					<?php
 						$Lado = '0';
 						}
 					}
