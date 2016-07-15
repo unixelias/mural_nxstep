@@ -1,6 +1,6 @@
 ﻿<script>
 	$(document).ready(function(e) {
-
+        
     });
 
 
@@ -41,36 +41,66 @@
 
 <?php
 	$Item = new Mensagem; //instancia Mensagem
-	$Item = $Item->ReadAll_JointInfo(); //lê todos os registros no BD
+	$Item = $Item->ReadAll(); //lê todos os registros no BD
+	
+	$Usuario = new Usuario; //Instancia Usuario
+	$Destinatario = new Usuario; //Instancia Destinatario
+	$Status = new Status; //Instancia Status
+	
 	$Lado = false;
 	if(empty($Item)){
 		?>
         	<h4 class="alert-warning">Nenhum dado encontrado!</h4>
-        <?php
+        <?php	
 	}
 	else{
 		?>
         <h2>Pool Geral de Mensagens NextStep</h2>
         	<ul class="timeline">
-            	<li>
+            	<li>        
 				<?php
 					foreach($Item as $itemRow){
 						if ($Lado === false){
 						//var_dump($itemRow);
+						//Lê o nome do Usuario, buscando pela id_usuario
+						$Usuario = $Usuario->Read($itemRow['id_usuario']);
+						//Grava o nome do Usuario em nomeUsuario
+						$nomeUsuario = $Usuario['nome_usuario'];
+						
+						//Busca o Status da Mensagem
+						$Status = $Status->ReadMensagem($itemRow['id_mensagem']);
+						//var_dump($Status['status_mensagem']);
+						//Grava o Status da Mensagem em $statusMensagem
+						if ($Status['status_mensagem'] === '0'){
+							$statusMensagem = 'Não Lida';
+						}else{
+							$statusMensagem = 'Lida';
+						}
+						//var_dump($Status['id_usuario']);
+						$idDestinatario = $Status['id_usuario'];
+						//Busca o nome do Destinatário
+						$Destinatario = $Destinatario->Read($idDestinatario);
+						//Grava o nome do Usuario em nomeUsuario
+						$nomeDestinatario = $Destinatario['nome_usuario'];
+						
+
+						
                 ?>
                         <li>
                         <div class="timeline-badge">
-                          <a><i class="fa fa-circle" id=""></i></a>
+                          <a><i class="fa fa-circle" id=""><!--Ligação com a linha do meio--></i></a>
                         </div>
                         <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4><?php echo $itemRow['nome_usuario']; ?></h4>
+                            <div class="timeline-heading" id="duascol">
+                                <h4><?php echo $nomeUsuario; ?> em: <?php echo $itemRow['data_mensagem']; ?></h4>
+                                <p class="text-right" id="assunto">Assunto: <?php echo $itemRow['assunto_mensagem']; ?></p>
                             </div>
                             <div class="timeline-body">
                                 <p><?php echo $itemRow['conteudo_mensagem']; ?></p>
                             </div>
-                            <div class="timeline-footer">
-                                <p class="text-right"><?php echo $itemRow['data_mensagem']; ?></p>
+                            <div class="timeline-footer"  id="duascol">
+                                <p class="text-left">Para: <?php echo $nomeDestinatario; ?></p>
+                                <p class="text-right"><?php echo $statusMensagem; ?></p>     
                             </div>
                         </div>
                         </li>
@@ -80,21 +110,23 @@
 					?>
                         <li class="timeline-inverted">
                         <div class="timeline-badge">
-                          <a><i class="fa fa-circle" id=""></i></a>
+                          <a><i class="fa fa-circle" id=""><!--Ligação com a linha do meio--></i></a>
                         </div>
                         <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4><?php echo $itemRow['id_usuario']; ?></h4>
+                            <div class="timeline-heading"  id="duascol">
+                                <h4><?php echo $nomeUsuario; ?> em: <?php echo $itemRow['data_mensagem']; ?></h4>
+                                <p class="text-right" id="assunto">Assunto: <?php echo $itemRow['assunto_mensagem']; ?></p>
                             </div>
                             <div class="timeline-body">
                                 <p><?php echo $itemRow['conteudo_mensagem']; ?></p>
                             </div>
-                            <div class="timeline-footer">
-                                <p class="text-right"><?php echo $itemRow['data_mensagem']; ?></p>
+                            <div class="timeline-footer"  id="duascol">
+                                <p class="text-left">Para: <?php echo $nomeDestinatario; ?></p>
+                                <p class="text-right"><?php echo $statusMensagem; ?></p>  
                             </div>
                         </div>
                         </li>
-					<?php
+					<?php						
 						$Lado = '0';
 						}
 					}
