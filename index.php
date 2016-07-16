@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<?php
-	phpinfo();
-?>
-=======
 <?php session_start();
 
   if(empty($_SESSION)){
