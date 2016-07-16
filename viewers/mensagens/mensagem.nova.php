@@ -1,3 +1,6 @@
+<?php session_start();
+
+ ?>
 
 <script>
 	$(document).ready(function(e) {
@@ -11,45 +14,38 @@
 			e.preventDefault();
 
 			//1 instansciar e recuperar valores dos inputs
-			var nome_trainee = $('#nome_trainee').val();
-			var email_trainee = $('#email_trainee').val();
-			var telefonefixo_trainee = $('#telefonefixo_trainee').val();
-			var celular_trainee = $('#celular_trainee').val();
+			var id_usuario = $('#id_usuario').val();
+			var assunto_mensagem = $('#assunto_mensagem').val();
+			var conteudo_mensagem = $('#conteudo_mensagem').val();
+			var hora_mensagem = $('#hora_mensagem').val();
+			var data_mensagem = $('#data_mensagem').val();
 
 
 			//2 validar os inputs
-			if(nome_trainee === "" || email_trainee === "" || telefonefixo_trainee === "" || celular_trainee === ""){
+			if(id_usuario === "" || assunto_mensagem === "" || conteudo_mensagem === "" || hora_mensagem === "" || data_mensagem === ""){
 				return alert('Todos os campos com asterisco (*) devem ser preenchidos!!');
 			}
 			else{
 
-
-				var emailtester = false;
-				var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-				emailtester = re.test(email_trainee);
-				if(!emailtester){
-
-					return alert("Formato de email incorreto. Corrija o campo e tente novamente");
-				}
-				else{
 					$.ajax({
-					   url: 'engine/controllers/trainee.php',
+					   url: 'engine/controllers/mensagem.php',
 					   data: {
-						   	id_trainee : null,
-							nome_trainee : nome_trainee,
-							email_trainee : email_trainee,
-							telefonefixo_trainee: telefonefixo_trainee,
-							celular_trainee: celular_trainee,
+						   id_mensagem : null,
+							id_usuario : id_usuario,
+							assunto_mensagem : assunto_mensagem,
+							conteudo_mensagem : conteudo_mensagem,
+							hora_mensagem : hora_mensagem,
+							data_mensagem : data_mensagem,
 							action: 'create'
 					   },
 					   error: function() {
 							alert('Erro na conexão com o servidor. Tente novamente em alguns segundos.');
 					   },
 					   success: function(data) {
-							console.log(data);
+
 							if(data === 'true'){
 								alert('Item adicionado com sucesso!');
-								$('#loader').load('viewers/cadastro/trainee.lista.php');
+								$('#loader').load('viewers/mensagens/mensagens.geral.lista.php');
 							}
 
 							else{
@@ -59,7 +55,7 @@
 
 					   type: 'POST'
 					});
-				}
+
 			}
 
 			//3 transferir os dados dos inputs para o arquivo q ira tratar
@@ -70,9 +66,7 @@
 
 
 
-		//mascaras abaixo
-		$('#telefonefixo_trainee').mask('(99) 9999-9999');
-		$('#celular_trainee').mask('(99) 9-9999-9999');
+
 	});
 </script>
 
@@ -121,5 +115,9 @@
         <input type="text" class="form-control" id="conteudo_mensagem" placeholder="Mensagem" aria-describedby="basic-addon1">
       </div>
   </section>
+
+  <input type="hidden" id="id_usuario" value="<?php echo $_SESSION['id_user'];?>">
+	<input type="hidden" id="data_mensagem" value="<?php echo date('Y-m-d');?>">
+	<input type="hidden" id="hora_mensagem" value="<?php echo date('H:i:s');?>">
 
 </section>
