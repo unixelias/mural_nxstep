@@ -3,12 +3,11 @@
   if(empty($_SESSION)){
     ?>
     <script>
-//        document.location.href='login/';
+       document.location.href='login/';
     </script>
 
 <?php
   }
-
 
  ?>
 

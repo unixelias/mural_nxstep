@@ -1,16 +1,16 @@
 <!doctype html>
 <html>
 <head>
-	
+
     <meta charset="utf-8">
     <title>Sistema :: Login</title>
-    
+
     <link rel="stylesheet" href="../css/bootstrap.css">
-	<link rel="stylesheet" href="../css/treinamento.css">
+
 </head>
 
 <body>
-	<br>	
+	<br>
 	<section class="row">
     	<section class="col-md-3"></section>
         <section class="col-md-6 text-center well">

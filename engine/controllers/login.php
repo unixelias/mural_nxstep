@@ -4,7 +4,7 @@
 
 	//1. Receber os dados do form
 	$email = $_POST['email'];
-	$senha = sha1($_POST['senha']);
+	$senha = $_POST['senha'];
 
 	$res;
 
@@ -18,13 +18,13 @@
 		session_destroy();
 	}
 	else{
-		$verificaEmail = strcmp($email,$user['email_treinador']);
+		$verificaEmail = strcmp($email,$user['email_usuario']);
 		if($verificaEmail === 0){
-			$verificaSenha = strcmp($senha,$user['senha_treinador']);
+			$verificaSenha = strcmp($senha,$user['senha_usuario']);
 			if($verificaSenha === 0){
 
-				$_SESSION['id_user'] = $user['id_treinador'];
-				$_SESSION['name_user'] = $user['nome_treinador'];
+				$_SESSION['id_user'] = $user['id_usuario'];
+				$_SESSION['name_user'] = $user['nome_usuario'];
 
 				$res = 'true';
 			}
