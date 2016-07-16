@@ -21,6 +21,24 @@ $(document).ready(function(e) {
 		$('#loader').load('viewers/usuario.lista.php');
     });
 	
+	$('#mensagens_geral_link').click(function(e) { //carregando parte de uma pagina na pagina principal
+		e.preventDefault();
+		//loader
+		$('#loader').load('viewers/mensagens/mensagens.geral.lista.php');
+	});
+
+	$('#nova_mensagem_link').click(function(e) { //carregando parte de uma pagina na pagina principal
+		e.preventDefault();
+		//loader
+		$('#loader').load('viewers/mensagens/mensagem.nova.php');
+	});
+
+	$('#mensagens_pessoais_link').click(function(e) { //carregando parte de uma pagina na pagina principal
+		e.preventDefault();
+		//loader
+		$('#loader').load('viewers/mensagens/mensagens.pessoais.php');
+	});
+	
 	$('#getout').click(function(e) {
 		e.preventDefault();
         //loader
@@ -48,33 +66,6 @@ $(document).ready(function(e) {
 		});		
     });
 	
-
-
-			$('#mensagens_geral_link').click(function(e) { //carregando parte de uma pagina na pagina principal
-				e.preventDefault();
-				//loader
-				$('#loader').load('viewers/mensagens/mensagens.geral.lista.php');
-			});
-
-		});
-
-		$(document).ready(function(e) {
-
-			$('#nova_mensagem_link').click(function(e) { //carregando parte de uma pagina na pagina principal
-				e.preventDefault();
-				//loader
-				$('#loader').load('viewers/mensagens/mensagem.nova.php');
-			});
-
-		});
-
-		$(document).ready(function(e) {
-
-			$('#mensagens_pessoais_link').click(function(e) { //carregando parte de uma pagina na pagina principal
-				e.preventDefault();
-				//loader
-				$('#loader').load('viewers/mensagens/mensagens.pessoais.php');
-			});
-
 });
+
 //>>>>>>> origin/master
