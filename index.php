@@ -16,6 +16,7 @@
 <head>
 
     <meta charset="utf-8">
+<<<<<<< HEAD
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -24,6 +25,12 @@
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" href="css/mural.css" type="text/css">
     <link rel="stylesheet" href="css/timeline.css" type="text/css">
+=======
+    <title>Mural NxStep</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/timeline.css">
+>>>>>>> 37459bce203b0177d4cc6f6ff0cd3cc55e3f3b61
 
 </head>
 
@@ -45,7 +52,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" id="">HOME </a></li>
+            <li><a href="#" id="home">HOME </a></li>
 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> MENSAGENS <span class="caret"></span></a>

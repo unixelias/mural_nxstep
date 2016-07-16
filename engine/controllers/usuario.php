@@ -24,7 +24,9 @@
 	//parte4
 	switch($action) {
 		case 'create':
-
+		
+			$Item = new Usuario();
+			$Item->SetValues($id_usuario, $nome_usuario, $email_usuario, $senha_usuario, $matricula_usuario); 
 
 			$res = $Item->Create();
 			if ($res === NULL) {
@@ -43,7 +45,7 @@
 
 
 
-			$res = $Item->Update();
+			//$res = $Item->Update();
 
 			if ($res === NULL) {
 				$res= 'true';
