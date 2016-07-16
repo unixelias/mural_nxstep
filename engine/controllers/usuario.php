@@ -45,7 +45,7 @@
 
 
 
-			$res = $Item->Update();
+			//$res = $Item->Update();
 
 			if ($res === NULL) {
 				$res= 'true';

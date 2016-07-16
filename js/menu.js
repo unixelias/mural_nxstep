@@ -10,28 +10,15 @@ x.innerHTML = "<span class='text-primary'>ciclambs</span>";
 console.log(x);*/
 
 $(document).ready(function(e) {
-<<<<<<< HEAD
     //var x = $('#h1xulambs');
 	//console.log(x);
 	
 	/* CADASTRO */
 	
-	$('#cadastro_treinador_link').click(function(e) {
+	$('#gerenciamento_usuario_link').click(function(e) {
 		e.preventDefault();
     	//loader
-		$('#loader').load('viewers/cadastro/treinador.lista.php');
-    });
-	
-	$('#cadastro_treinamento_link').click(function(e) {
-		e.preventDefault();
-    	//loader
-		$('#loader').load('viewers/cadastro/treinamento.lista.php');
-    });
-	
-	$('#cadastro_trainee_link').click(function(e) {
-		e.preventDefault();
-    	//loader
-		$('#loader').load('viewers/cadastro/trainee.lista.php');
+		$('#loader').load('viewers/usuario.lista.php');
     });
 	
 	$('#getout').click(function(e) {
@@ -61,10 +48,7 @@ $(document).ready(function(e) {
 		});		
     });
 	
-});
-=======
 
-		$(document).ready(function(e) {
 
 			$('#mensagens_geral_link').click(function(e) { //carregando parte de uma pagina na pagina principal
 				e.preventDefault();
@@ -92,10 +76,5 @@ $(document).ready(function(e) {
 				$('#loader').load('viewers/mensagens/mensagens.pessoais.php');
 			});
 
-		});
-
-
-	
-
 });
->>>>>>> origin/master
+//>>>>>>> origin/master
