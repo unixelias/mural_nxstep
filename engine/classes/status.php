@@ -181,7 +181,30 @@
 			--------------------------------------------------
 		
 		*/
-		
+
+		//lê a mensagem a partir do status
+		public function ReadMensagem($id_mensagem) {
+			$sql = "
+				SELECT
+					 t1.id_status,
+					 t1.id_mensagem,
+					 t1.id_usuario,
+					 t1.status_mensagem
+				FROM
+					status AS t1
+				WHERE
+					t1.id_mensagem  = '$id_mensagem'
+
+			";
+			
+			
+			$DB = new DB();
+			$DB->open();
+			$Data = $DB->fetchData($sql);
+			
+			$DB->close();
+			return $Data[0]; 
+		}
 		
 		/*
 			--------------------------------------------------
