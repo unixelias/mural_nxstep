@@ -1,5 +1,16 @@
 $(document).ready(function(e) {
 
+
+	$(document).ready(function(e) {
+
+				$('#home').click(function(e) { //carregando parte de uma pagina na pagina principal
+					e.preventDefault();
+					//loader
+					document.location.reload();
+				});
+
+			});
+
 $(document).ready(function(e) {
 
 			$('#mensagens_geral_link').click(function(e) { //carregando parte de uma pagina na pagina principal
