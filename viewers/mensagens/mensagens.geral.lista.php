@@ -22,7 +22,77 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+<?php
+	$Mensagem = new Mensagem; //instancia Mensagem
+	$Mensagem = $Mensagem->ReadAll_JointInfo(); //lê todos os registros no BD
+	
+	$Usuario = new Usuario; //Instancia Usuario
 
+	if(empty($Mensagem)){
+		?>
+        	<h4 class="alert-warning">Nenhum dado encontrado!</h4>
+        <?php
+	}
+	else{
+		?>
+        	
+        	<div class="header" >Mural de Comunicados NextStep
+        	  <div id="dataYear"> 2016 </div>
+			</div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+            <section class="wrap">
+                <nav class="timeline  container-fluid">
+                <!--div class="year"-->   
+                    <?php
+                        foreach($Mensagem as $itemRow){
+							$Status = new Status; //Instancia Status
+                            $Status = $Status->Read($temRow['id_status']);
+ 								
+							if ($itemRow['status_mensagem'] === '0'){
+								$statusMensagem = 'Não Lida';
+								}else{
+								$statusMensagem = 'Lida';
+							}
+
+							$Destinatario = new Usuario; //Instancia Destinatario
+                            $Destinatario = $Destinatario->Read($Status['id_usuario']);
+
+                    ?>
+                    <div class="evt">
+                        <article class="in">
+                           <span class="date">
+                                <span class="day">26</span> 
+                              <span class="month">May</span>
+                            </span>
+                        
+                            <header id="duascol">
+                                <h2><?php echo $itemRow['nome_usuario']; ?> em: <?php echo $itemRow['data_mensagem']; ?></h2>
+                                <p class="text-right" id="assunto">Assunto: <?php echo $itemRow['assunto_mensagem']; ?></p>
+                            </header>
+                            
+                            <p class="data">
+                                <?php echo $itemRow['conteudo_mensagem']; ?>
+                            </p>
+                            
+                            <footer class="footer"  id="duascol">
+                                <!--p class="text-left">Para: <?php echo $Destinatario['nome_usuario']; ?></p-->
+                                <p class="text"><?php echo $statusMensagem; ?></p>
+                            </footer>
+                        </article>
+                    </div>
+                    <?php
+					}
+					?>
+                <!--/div-->                    
+                </nav>
+            </section> 	
+      <?php
+      }
+?>
 <br>
 <!--Breadrumb-->
 <ol class="breadcrumb">
@@ -31,111 +101,4 @@
     <li><a href="#">Geral</a></li>
     <li class="active">Lista de Mensagens Geral</li>
 </ol>
-<h1>
-	Lista de Mensagens Geral
-</h1>
-<br>
-<section class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Atualizar</button>
-  <button type="button" class="btn btn-success active"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Adicionar Dados</button>
-</section>
-<br></br>
-<br></br>
-
-<?php
-	$Item = new Mensagem; //instancia Mensagem
-	$Item = $Item->ReadAll(); //lê todos os registros no BD
-
-	$Usuario = new Usuario; //Instancia Usuario
-	$Destinatario = new Usuario; //Instancia Destinatario
-	$Status = new Status; //Instancia Status
-
-	$Lado = false;
-	if(empty($Item)){
-		?>
-        	<h4 class="alert-warning">Nenhum dado encontrado!</h4>
-        <?php
-	}
-	else{
-		?>
-        <h2>Pool Geral de Mensagens NextStep</h2>
-        	<ul class="timeline">
-            	<li>
-				<?php
-					foreach($Item as $itemRow){
-						if ($Lado === false){
-						//var_dump($itemRow);
-						//Lê o nome do Usuario, buscando pela id_usuario
-						$Usuario = $Usuario->Read($itemRow['id_usuario']);
-						//Grava o nome do Usuario em nomeUsuario
-						$nomeUsuario = $Usuario['nome_usuario'];
-
-						//Busca o Status da Mensagem
-						$Status = $Status->ReadMensagem($itemRow['id_mensagem']);
-						//var_dump($Status['status_mensagem']);
-						//Grava o Status da Mensagem em $statusMensagem
-						if ($Status['status_mensagem'] === '0'){
-							$statusMensagem = 'Não Lida';
-						}else{
-							$statusMensagem = 'Lida';
-						}
-						//var_dump($Status['id_usuario']);
-						$idDestinatario = $Status['id_usuario'];
-						//Busca o nome do Destinatário
-						$Destinatario = $Destinatario->Read($idDestinatario);
-						//Grava o nome do Usuario em nomeUsuario
-						$nomeDestinatario = $Destinatario['nome_usuario'];
-
-
-
-                ?>
-                        <li>
-                        <div class="timeline-badge">
-                          <a><i class="fa fa-circle" id=""><!--Ligação com a linha do meio--></i></a>
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading" id="duascol">
-                                <h4><?php echo $nomeUsuario; ?> em: <?php echo $itemRow['data_mensagem']; ?></h4>
-                                <p class="text-right" id="assunto">Assunto: <?php echo $itemRow['assunto_mensagem']; ?></p>
-                            </div>
-                            <div class="timeline-body">
-                                <p><?php echo $itemRow['conteudo_mensagem']; ?></p>
-                            </div>
-                            <div class="timeline-footer"  id="duascol">
-                                <p class="text-left">Para: <?php echo $nomeDestinatario; ?></p>
-                                <p class="text-right"><?php echo $statusMensagem; ?></p>
-                            </div>
-                        </div>
-                        </li>
-                    <?php
-						$Lado = true;
-						} else {
-					?>
-                        <li class="timeline-inverted">
-                        <div class="timeline-badge">
-                          <a><i class="fa fa-circle" id=""><!--Ligação com a linha do meio--></i></a>
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading"  id="duascol">
-                                <h4><?php echo $nomeUsuario; ?> em: <?php echo $itemRow['data_mensagem']; ?></h4>
-                                <p class="text-right" id="assunto">Assunto: <?php echo $itemRow['assunto_mensagem']; ?></p>
-                            </div>
-                            <div class="timeline-body">
-                                <p><?php echo $itemRow['conteudo_mensagem']; ?></p>
-                            </div>
-                            <div class="timeline-footer"  id="duascol">
-                                <p class="text-left">Para: <?php echo $nomeDestinatario; ?></p>
-                                <p class="text-right"><?php echo $statusMensagem; ?></p>
-                            </div>
-                        </div>
-                        </li>
-					<?php
-						$Lado = '0';
-						}
-					}
-					?>
-             	<li class="clearfix no-float"></li>
-             </ul>
-      <?php
-	}
-?>
+</br>

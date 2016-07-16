@@ -10,11 +10,20 @@
 	padding-bottom:6px;
 }
 
-#afasticon{
-
-padding-left:30px;
-	
+#duascol {
+	padding:0.5em;
+	column-count:2;
+	-moz-column-count:2;
+	-webkit-column-count:2;
 }
+
+#assunto {
+	color:#0E6B30;
+	text-emphasis:accent;
+	font-weight:bold;
+
+}
+
 .mainfooter{
 	padding:0.5em;
 	color:#aaa;
@@ -98,4 +107,15 @@ a.thumbnail.active {
 	font-weight: bold;
 	font-size:2vw;
 	color:0074ae;
+}
+
+.treinamentofooter{
+	padding:1.5em;
+	background:#111;
+	color:#aaa;
+}
+
+#conteudo_mensagem{
+	height: 8em;
+
 }

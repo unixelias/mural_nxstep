@@ -182,7 +182,12 @@
 			return $result;
 		}
 
+		/*
+			--------------------------------------------------
+			Viewer SPecific methods -- begin
+			--------------------------------------------------
 
+		*/
 
 		public function ReadByEmail($email){
 			$sql = "

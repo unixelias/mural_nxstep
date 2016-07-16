@@ -9,7 +9,6 @@ x.innerHTML = "<span class='text-primary'>troca</span>";
 
 console.log(x);*/
 
-
 $(function(){
   $(window).scroll(function(){
     $('.year').each(function(){
@@ -28,4 +27,5 @@ $(document).ready(function(){
     $('#dataYear').html(year); 
   $('.year').first().find('.date').addClass('activeYear');
 });
+
 
