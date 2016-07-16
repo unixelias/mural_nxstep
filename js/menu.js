@@ -1,7 +1,7 @@
 $(document).ready(function(e) {
 
 
-	$(document).ready(function(e) {
+		$(document).ready(function(e) {
 
 				$('#home').click(function(e) { //carregando parte de uma pagina na pagina principal
 					e.preventDefault();
@@ -10,8 +10,18 @@ $(document).ready(function(e) {
 				});
 
 			});
+			
+		$(document).ready(function(e) {
 
-$(document).ready(function(e) {
+				$('#gerenciamento_usuario_link').click(function(e) { //carregando parte de uma pagina na pagina principal
+					e.preventDefault();
+					//loader
+					$('#loader').load('viewers/usuario.lista.php');
+				});
+
+			});
+
+		$(document).ready(function(e) {
 
 			$('#mensagens_geral_link').click(function(e) { //carregando parte de uma pagina na pagina principal
 				e.preventDefault();
