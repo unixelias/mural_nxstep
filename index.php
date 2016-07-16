@@ -16,10 +16,9 @@
 <head>
 
     <meta charset="utf-8">
-    <title>Sistema</title>
+    <title>Mural NxStep</title>
 
     <link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/mural.css">
     <link rel="stylesheet" href="css/timeline.css">
 
 </head>
