@@ -1,6 +1,9 @@
-﻿<script>
+<?php session_start();
+ ?>
+
+<script>
 	$(document).ready(function(e) {
-        
+
     });
 
 
@@ -11,7 +14,7 @@
 ?>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -42,22 +45,22 @@
 <?php
 	$Item = new Mensagem; //instancia Mensagem
 	$Item = $Item->ReadAll(); //lê todos os registros no BD
-	
+
 	$Usuario = new Usuario; //Instancia Usuario
 	$Destinatario = new Usuario; //Instancia Destinatario
 	$Status = new Status; //Instancia Status
-	
+
 	$Lado = false;
 	if(empty($Item)){
 		?>
         	<h4 class="alert-warning">Nenhum dado encontrado!</h4>
-        <?php	
+        <?php
 	}
 	else{
 		?>
         <h2>Pool Geral de Mensagens NextStep</h2>
         	<ul class="timeline">
-            	<li>        
+            	<li>
 				<?php
 					foreach($Item as $itemRow){
 						if ($Lado === false){
@@ -66,7 +69,7 @@
 						$Usuario = $Usuario->Read($itemRow['id_usuario']);
 						//Grava o nome do Usuario em nomeUsuario
 						$nomeUsuario = $Usuario['nome_usuario'];
-						
+
 						//Busca o Status da Mensagem
 						$Status = $Status->ReadMensagem($itemRow['id_mensagem']);
 						//var_dump($Status['status_mensagem']);
@@ -82,9 +85,9 @@
 						$Destinatario = $Destinatario->Read($idDestinatario);
 						//Grava o nome do Usuario em nomeUsuario
 						$nomeDestinatario = $Destinatario['nome_usuario'];
-						
 
-						
+
+
                 ?>
                         <li>
                         <div class="timeline-badge">
@@ -100,7 +103,7 @@
                             </div>
                             <div class="timeline-footer"  id="duascol">
                                 <p class="text-left">Para: <?php echo $nomeDestinatario; ?></p>
-                                <p class="text-right"><?php echo $statusMensagem; ?></p>     
+                                <p class="text-right"><?php echo $statusMensagem; ?></p>
                             </div>
                         </div>
                         </li>
@@ -122,11 +125,11 @@
                             </div>
                             <div class="timeline-footer"  id="duascol">
                                 <p class="text-left">Para: <?php echo $nomeDestinatario; ?></p>
-                                <p class="text-right"><?php echo $statusMensagem; ?></p>  
+                                <p class="text-right"><?php echo $statusMensagem; ?></p>
                             </div>
                         </div>
                         </li>
-					<?php						
+					<?php
 						$Lado = '0';
 						}
 					}

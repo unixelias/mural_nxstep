@@ -1,3 +1,17 @@
+<?php session_start();
+
+  if(empty($_SESSION)){
+    ?>
+    <script>
+//        document.location.href='login/';
+    </script>
+
+<?php
+  }
+
+
+ ?>
+
 <!doctype html>
 <html>
 <head>
@@ -8,7 +22,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/mural.css">
     <link rel="stylesheet" href="css/timeline.css">
-	
+
 </head>
 
 <body>

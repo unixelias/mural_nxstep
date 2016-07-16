@@ -183,12 +183,31 @@
 		}
 
 
-		/*
-			--------------------------------------------------
-			Viewer SPecific methods -- begin
-			--------------------------------------------------
 
-		*/
+		public function ReadByEmail($email){
+			$sql = "
+				SELECT
+					 t1.id_usuario,
+					 t1.nome_usuario,
+					 t1.email_usuario,
+					 t1.senha_usuario,
+					 t1.matricula_usuario
+
+				FROM
+					usuario AS t1
+				WHERE
+					t1.email_usuario = '$email'
+
+			";
+
+
+			$DB = new DB();
+			$DB->open();
+			$Data = $DB->fetchData($sql);
+
+			$DB->close();
+			return $Data[0];
+		}
 
 
 		/*
