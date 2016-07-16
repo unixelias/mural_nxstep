@@ -188,16 +188,6 @@
 			--------------------------------------------------
 
 		*/
-<<<<<<< HEAD
-		public function ReadByEmail($email){
-			$sql = "
-				SELECT
-					 t1.id_usuario,					 
-					 t1.nome_usuario,
-					 t1.email_usuario,					 
-					 t1.senha_usuario,
-					 t1.matricula_usuario,				 
-=======
 
 		public function ReadByEmail($email){
 			$sql = "
@@ -208,25 +198,12 @@
 					 t1.senha_usuario,
 					 t1.matricula_usuario
 
->>>>>>> origin/master
 				FROM
 					usuario AS t1
 				WHERE
 					t1.email_usuario = '$email'
 
 			";
-<<<<<<< HEAD
-			
-			
-			$DB = new DB();
-			$DB->open();
-			$Data = $DB->fetchData($sql);
-			
-			$DB->close();
-			return $Data[0]; 
-		}
-		
-=======
 
 
 			$DB = new DB();
@@ -238,7 +215,6 @@
 		}
 
 
->>>>>>> origin/master
 		/*
 			--------------------------------------------------
 			Viewer SPecific methods -- end
