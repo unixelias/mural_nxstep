@@ -27,6 +27,8 @@
 	$Mensagem = $Mensagem->ReadAll_JointInfo(); //lê todos os registros no BD
 	
 	$Usuario = new Usuario; //Instancia Usuario
+	$DataInicial = explode('-', $Mensagem[0]['data_mensagem']);
+
 
 	if(empty($Mensagem)){
 		?>
@@ -36,61 +38,90 @@
 	else{
 		?>
         	
-        	<div class="header" >Mural de Comunicados NextStep
-        	  <div id="dataYear"> 2016 </div>
+        	<div class="header superheader" >Mural de Comunicados NextStep
+        	  <div id="dataYear"> <?php echo $DataInicial[1]."/".$DataInicial[0]; ?> </div>
 			</div>
             <br/>
             <br/>
             <br/>
             <br/>
 
-            <section class="wrap">
-                <nav class="timeline  container-fluid">
-                <!--div class="year"-->   
+            <div class="container-fluid" id="site colunas">
+            <div id="topo">&nbsp;</div>
+            <div id="col1"></div>
+            <div id="col2">            
+            <div class="wrap">
+                <div class="timeline">
+                  
                     <?php
                         foreach($Mensagem as $itemRow){
+							
+							$msg = $itemRow;
 							$Status = new Status; //Instancia Status
-                            $Status = $Status->Read($temRow['id_status']);
- 								
-							if ($itemRow['status_mensagem'] === '0'){
+                            $Status = $Status->ReadMensagem($msg['id_mensagem']);
+							
+							if ($mcg['status_mensagem'] === '0'){
 								$statusMensagem = 'Não Lida';
 								}else{
 								$statusMensagem = 'Lida';
 							}
+							
+							if ($msg['id_mensagem'] === '0'){
+								$MesAnterior = explode('-', $msg['data_mensagem']);
+								}
+							
+							$Mes = explode('-', $itemRow['data_mensagem']);
 
-							$Destinatario = new Usuario; //Instancia Destinatario
-                            $Destinatario = $Destinatario->Read($Status['id_usuario']);
+							if($MesAnterior[1] != $Mes[1]){
+								$MesAnterior[1] = $Mes[1];
+								$Check = 1;
+								?><div class="year"><h2><?php echo $Mes[1]."/".$Mes[0]?></h2>								
+                                <?php 
+							}
+							
 
                     ?>
+                    <!--Se a data muda, chama um year-->
+                    
                     <div class="evt">
-                        <article class="in">
+                        <div class="in container-fluid">
                            <span class="date">
-                                <span class="day">26</span> 
-                              <span class="month">May</span>
+                                <span class="day"><?php echo $Mes[1]."/"?></span><span class="month"><?php echo $Mes[0]?></span>
                             </span>
                         
-                            <header id="duascol">
-                                <h2><?php echo $itemRow['nome_usuario']; ?> em: <?php echo $itemRow['data_mensagem']; ?></h2>
-                                <p class="text-right" id="assunto">Assunto: <?php echo $itemRow['assunto_mensagem']; ?></p>
-                            </header>
+                            <div>
+                                <h2><?php echo $itemRow['nome_usuario'] ?></h2>
+                            </div>
                             
                             <p class="data">
                                 <?php echo $itemRow['conteudo_mensagem']; ?>
                             </p>
                             
-                            <footer class="footer"  id="duascol">
-                                <!--p class="text-left">Para: <?php echo $Destinatario['nome_usuario']; ?></p-->
+                            <div class="timeline-footer"  id="duascol">
+                                <p class="text-left">Assunto: <?php echo $itemRow['assunto_mensagem']; ?></p>
                                 <p class="text"><?php echo $statusMensagem; ?></p>
-                            </footer>
-                        </article>
+                            </div>
+                        </div>
                     </div>
-                    <?php
+                    
+                     
+                    
+					<?php
+					if ($Check === 1){
+						$Check = 0;
+						?></div><?php
+						}
 					}
+					
 					?>
-                <!--/div-->                    
-                </nav>
-            </section> 	
-      <?php
+                                   
+                </div>
+            </div>
+            </div>
+            <div id="col1"></div>
+            </div>
+             	
+<?php
       }
 ?>
 <br>

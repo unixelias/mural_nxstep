@@ -13,7 +13,7 @@ $(function(){
   $(window).scroll(function(){
     $('.year').each(function(){
       var year = $(this).find('h2').first().text();
-      if($(this).offset().top < $(document).scrollTop() +100){
+      if($(this).offset().top < $(document).scrollTop() +150){
         $(this).find('.date').addClass('activeYear');
            $('#dataYear').html(year);
         }else{

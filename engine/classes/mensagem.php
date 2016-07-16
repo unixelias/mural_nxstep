@@ -212,7 +212,7 @@
 				t1.id_usuario = t2.id_usuario
 				AND
 				t1.id_mensagem = t3.id_mensagem
-
+				ORDER BY data_mensagem
 			";
 
 
