@@ -12,25 +12,22 @@
  ?>
 
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
 
     <meta charset="utf-8">
-<<<<<<< HEAD
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Sistema</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-	<link rel="stylesheet" href="css/mural.css" type="text/css">
-    <link rel="stylesheet" href="css/timeline.css" type="text/css">
-=======
     <title>Mural NxStep</title>
 
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/timeline.css">
->>>>>>> 37459bce203b0177d4cc6f6ff0cd3cc55e3f3b61
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
@@ -86,8 +83,10 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
     <script src="js/menu.js"></script>
-    <script src="js/timeline.js"></script>
     <script src="js/jquerymask.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+    <script src="js/timeline.js"></script>
 
 </body>
 </html>
