@@ -9,23 +9,23 @@ x.innerHTML = "<span class='text-primary'>troca</span>";
 
 console.log(x);*/
 
-$(function(){
-  $(window).scroll(function(){
-    $('.year').each(function(){
-      var year = $(this).find('h2').first().text();
-      if($(this).offset().top < $(document).scrollTop() +150){
-        $(this).find('.date').addClass('activeYear');
-           $('#dataYear').html(year);
-        }else{
-          $(this).find('.date').removeClass('activeYear');
-        }
-    });
-  });
-});
-$(document).ready(function(){
-  var year = $('.year').find('h2').first().text();
-    $('#dataYear').html(year); 
-  $('.year').first().find('.date').addClass('activeYear');
-});
+jQuery(document).ready(function($){
+	var $timeline_block = $('.cd-timeline-block');
 
+	//hide timeline blocks which are outside the viewport
+	$timeline_block.each(function(){
+		if($(this).offset().top > $(window).scrollTop()+$(window).height()*0.75) {
+			$(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+		}
+	});
+
+	//on scolling, show/animate timeline blocks when enter the viewport
+	$(window).on('scroll', function(){
+		$timeline_block.each(function(){
+			if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
+				$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+			}
+		});
+	});
+});
 

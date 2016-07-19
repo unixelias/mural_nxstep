@@ -2,7 +2,7 @@
 	$(document).ready(function(e) {
 		$('#Voltar').click(function(e) {
 			e.preventDefault();
-			$('#loader').load('viewers/usuario.lista.php');
+			$('#loader').load('viewers/usuarios/usuario.lista.php');
 		});
 
 		$('#Salvar').click(function(e) {
@@ -45,7 +45,7 @@
 							//console.log(data);
 							if(data === 'true'){
 								alert('Item adicionado com sucesso!');
-								$('#loader').load('viewers/usuario.lista.php');
+								$('#loader').load('viewers/usuarios/usuario.lista.php');
 							}
 							else{
 								alert('Erro ao conectar com banco de dados. Aguarde e tente novamente em alguns instantes.');	

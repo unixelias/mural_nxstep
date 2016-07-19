@@ -70,11 +70,53 @@
 	});
 </script>
 
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <title>Mural NxStep</title>
+
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+	<link rel="stylesheet" href="../../css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="../../css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+
 <?php
 	require_once "../../engine/config.php";
 ?>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../../css/bootstrap.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="../../css/reset.css"> <!-- CSS reset -->
+<link rel="stylesheet" href="../../css/style.css"> <!-- Resource style -->
+<script src="js/modernizr.js"></script> <!-- Modernizr -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]
+<br><br>
+
+<script language='JavaScript'>
+
+var width = 200;
+var height = 200;
+
+var left = 50;
+var top = 50;
+
+URL = 'http://localhost/xcr/exec.htm';
+
+window.open(URL, 'width='+width+', height='+height+', top='+top+', left='+left+', scrollbars=no, status=no, toolbar=no, location=no, directories=no, menubar=no, resizable=no, fullscreen=no');
+
+</script>-->	
 
 
+ 
+ 
+<!-- mascara para cobrir o site -->  
+<div id="mascara"></div>
 <br>
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
@@ -82,42 +124,73 @@
   <li><a href="#">Nova Mensagem</a></li>
 </ol>
 
-<h1>
-	Nova mensagem
-</h1>
+<section id="cd-timeline" class="cd-container">
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-picture">
+            <img src="img/cd-icon-picture.svg" alt="Picture">
+        </div> <!-- cd-timeline-img -->
+
+        <div class="cd-timeline-content">
+            <h2>Nova Mensagem</h2>
+            <p>
+			<p> </p>
+            <section class="row form AdicionarDados">
+                <section class="col-md-12">
+                    <div class="input-group assunto">
+                      <span class="input-group-addon" id="basic-addon1">Assunto *</span>
+                      <input type="text" class="form-control" id="assunto_mensagem text_field" placeholder="Assunto da mensagem" aria-describedby="basic-addon1">
+                      
+                  </div>
+                </section>
+            </section>
+            <br />
+            <section class="row form AdicionarDados">
+                <section class="col-md-12">
+                    <div class="input-group assunto">
+                      <span class="input-group-addon" id="basic-addon1">Para</span>
+                      <input type="text" class="form-control" id="assunto_mensagem text_field" placeholder="Destinatário" aria-describedby="basic-addon1"> <!--TODO-->
+                      
+                    </div>
+                </section>
+            </section>
+            <br />
+            <section class="row formAdicionarDados">
+                <section class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+	                	<h3 class="panel-title" id="basic-addon1">Mensagem *</h3>
+                    </div>
+                    <div class="input-group">
+                        <textarea type="text" class="form-control caixa_texto
+                        " id="conteudo_mensagem" placeholder="Escreva sua mensagem" aria-describedby="basic-addon1"></textarea>
+                    </div>                    
+                </div>
+                <input type="hidden" id="id_usuario" value="<?php echo $_SESSION['id_user'];?>">
+                <input type="hidden" id="data_mensagem" value="<?php echo date('Y-m-d');?>">
+                <input type="hidden" id="hora_mensagem" value="<?php echo date('H:i:s');?>">   
+                </section>
+
+            </section>
+            </p>
+            <div class="row container-fluid" align="right">
+                <section class="btn-group" role="group" aria-label="...">
+                	<button type="button" class="btn btn-warning" id="Voltar"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Voltar</button>
+                	<button type="button" class="btn btn-success" id="Salvar"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Salvar</button>
+                </section>
+            </div>
+            <span class="cd-date"><?php echo date('d/m/Y')?></span>
+        </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+
+</section> <!-- cd-timeline -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+<script src="js/modal.js"></script>
+
 
 <br>
 
-<section class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-warning" id="Voltar"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Voltar</button>
-  <button type="button" class="btn btn-success" id="Salvar"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Salvar</button>
-</section>
 
 
-<br><br>
-
-<section class="row form AdicionarDados">
-	<section class="col-md-4">
-    	<div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">Assunto *</span>
-          <input type="text" class="form-control" id="assunto_mensagem" placeholder="Assunto" aria-describedby="basic-addon1">
-        </div>
-    </section>
 
 
-</section>
-
-<br>
-<section class="row formAdicionarDados">
-  <section class="col-md-4">
-    <div class="input-group">
-        <span class="input-group-addon" id="basic-addon1">Mensagem *</span>
-        <input type="text" class="form-control" id="conteudo_mensagem" placeholder="Mensagem" aria-describedby="basic-addon1">
-      </div>
-  </section>
-
-  <input type="hidden" id="id_usuario" value="<?php echo $_SESSION['id_user'];?>">
-	<input type="hidden" id="data_mensagem" value="<?php echo date('Y-m-d');?>">
-	<input type="hidden" id="hora_mensagem" value="<?php echo date('H:i:s');?>">
-
-</section>

@@ -2,18 +2,18 @@
 	$(document).ready(function(e) {
 		$('#Atualizar').click(function(e) {
 			e.preventDefault();
-			$('#loader').load('viewers/usuario.lista.php');
+			$('#loader').load('viewers/usuarios/usuario.lista.php');
    	    });
 		$('#Adicionar').click(function(e) {
 			e.preventDefault();
-			$('#loader').load('viewers/usuario.adicionar.php');
+			$('#loader').load('viewers/usuarios/usuario.adicionar.php');
    		});
 		$('.EditarItem').click(function(e) {
 			e.preventDefault();
 			
 			var id = $(this).attr('id');
 			//alert(id);
-			$('#loader').load('viewers/usuario.editar.php', { id : id });
+			$('#loader').load('viewers/usuarios/usuario.editar.php', { id : id });
    	    });
 		
 		$('.ExcluirItem').click(function(e) {
@@ -40,7 +40,7 @@
 							console.log(data);
 							if(data === 'true'){
 								alert('Item excluído com sucesso!');
-								$('#loader').load('viewers/usuario.lista.php');
+								$('#loader').load('viewers/usuarios/usuario.lista.php');
 							}
 							else{
 								alert('Erro ao conectar com banco de dados. Aguarde e tente novamente em alguns instantes.');	
