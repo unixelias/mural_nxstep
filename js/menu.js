@@ -3,23 +3,33 @@ $(document).ready(function(e) {
 
 		$(document).ready(function(e) {
 
-				$('#home').click(function(e) { //carregando parte de uma pagina na pagina principal
-					e.preventDefault();
-					//loader
-					document.location.reload();
-				});
-
+			$('#home').click(function(e) { //carregando parte de uma pagina na pagina principal
+				e.preventDefault();
+				//loader
+				document.location.reload();
 			});
+
+		});
+		
+		$(document).ready(function(e) {
+
+			$('#cadastro').click(function(e) { //carregando parte de uma pagina na pagina principal
+				e.preventDefault();
+				//loader
+				$('#loader').load('viewers/usuarios/usuario.editar.php');
+			});
+
+		});
 
 		$(document).ready(function(e) {
 
-				$('#perfil_usuario_link').click(function(e) { //carregando parte de uma pagina na pagina principal
-					e.preventDefault();
-					//loader
-					$('#loader').load('viewers/usuarios/usuario.editar.php');
-				});
-
+			$('#perfil_usuario_link').click(function(e) { //carregando parte de uma pagina na pagina principal
+				e.preventDefault();
+				//loader
+				$('#loader').load('login/usuario.adicionar.php');
 			});
+
+		});
 
 		$(document).ready(function(e) {
 
