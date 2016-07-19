@@ -1,13 +1,5 @@
 <?php session_start();
-  if(!empty($_SESSION)){
-    require_once "../engine/config.php";
-    $user = new Usuario();
-    $user = $user->Read($_SESSION['id_user']);
-    if(empty($user)){
-        session_destroy();
-    }
-    
-  }
+    session_destroy();
  ?>
 
 <!doctype html>
