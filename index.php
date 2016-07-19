@@ -66,8 +66,10 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-
-
+    <br />
+    <br />
+    <br />
+    <br />
     <main class="container-fluid" id="loader">
 
     	<h1 id="h1teste">Teste</h1>
@@ -76,8 +78,8 @@
 
 
 
-    <footer class="treinamentofooter container-fluid">
-    	<p class="text-center"> Copyright © Next Step 2016. Todos os direitos reservados. </p>
+    <footer class="mural-footer">
+    	<p class="text-center footer-texto">Copyright © Next Step 2016. Todos os direitos reservados. </p>
     </footer>
 
 	<script src="js/jquery.js"></script>

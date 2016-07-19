@@ -112,12 +112,6 @@ window.open(URL, 'width='+width+', height='+height+', top='+top+', left='+left+'
 
 </script>-->	
 
-
- 
- 
-<!-- mascara para cobrir o site -->  
-<div id="mascara"></div>
-<br>
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
   <li><a href="#">Mensagens</a></li>

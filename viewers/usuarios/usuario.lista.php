@@ -58,8 +58,6 @@
 	require_once "../../engine/config.php";
 ?>
 
-
-<br>
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
   <li class="active">Gerenciar Usuários</li>

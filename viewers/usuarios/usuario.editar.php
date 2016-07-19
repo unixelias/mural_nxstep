@@ -99,8 +99,6 @@
 	require_once "../../engine/config.php";
 ?>
 
-<br>
-
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
   <li><a href="#">Gerenciar Usuários</a></li>
