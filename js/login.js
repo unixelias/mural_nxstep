@@ -18,8 +18,6 @@ $(document).ready(function(e) {
     					senha : senha,
     			   },
 
-
-
     			   error: function() {
     					alert('Erro na conexão com o servidor. Tente novamente em alguns segundos.');
     			   },
@@ -30,6 +28,10 @@ $(document).ready(function(e) {
     					else if(data === 'no_user_found'){
     						alert('Nenhum usuario encontrado com este email.');
     					}
+              else if(data === 'wrong_password'){
+                alert('Senha errada');
+                
+              }
     					else{
     						alert('Erro ao conectar com banco de dados. Aguarde e tente novamente em alguns instantes.');
     					}

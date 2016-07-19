@@ -6,7 +6,6 @@
 
     });
 
-
 </script>
 <script src="js/modernizr.js"></script> <!-- Modernizr -->
 <?php
@@ -14,13 +13,6 @@
 ?>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
 
 <!--Breadrumb-->
 <ol class="breadcrumb">
@@ -43,17 +35,17 @@
         <section id="cd-timeline" class="cd-container">
 		<?php
 			foreach($Mensagem as $itemRow){
-				
+
 				$msg = $itemRow;
 				$Status = new Status; //Instancia Status
 				$Status = $Status->ReadMensagem($msg['id_mensagem']);
-				
+
 				if ($Status['status_mensagem'] === '0'){
 					$statusMensagem = 'Não Lida';
 					}else{
 					$statusMensagem = 'Lida';
 				}
-		?>	
+		?>
 		<div class="cd-timeline-block">
 			<div class="cd-timeline-img cd-picture">
 				<img src="img/cd-icon-picture.svg" alt="Picture">

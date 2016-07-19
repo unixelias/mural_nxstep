@@ -5,6 +5,8 @@
 	//1. Receber os dados do form
 	$email = $_POST['email'];
 	$senha = $_POST['senha'];
+	$senha = sha1($senha);
+
 
 	$res;
 

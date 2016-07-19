@@ -10,13 +10,13 @@ $(document).ready(function(e) {
 				});
 
 			});
-			
+
 		$(document).ready(function(e) {
 
-				$('#gerenciamento_usuario_link').click(function(e) { //carregando parte de uma pagina na pagina principal
+				$('#perfil_usuario_link').click(function(e) { //carregando parte de uma pagina na pagina principal
 					e.preventDefault();
 					//loader
-					$('#loader').load('viewers/usuarios/usuario.lista.php');
+					$('#loader').load('viewers/usuarios/usuario.editar.php');
 				});
 
 			});

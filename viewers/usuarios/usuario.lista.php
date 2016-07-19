@@ -10,15 +10,15 @@
    		});
 		$('.EditarItem').click(function(e) {
 			e.preventDefault();
-			
+
 			var id = $(this).attr('id');
 			//alert(id);
 			$('#loader').load('viewers/usuarios/usuario.editar.php', { id : id });
    	    });
-		
+
 		$('.ExcluirItem').click(function(e) {
 			e.preventDefault();
-			
+
 			var id = $(this).attr('id');
 			//alert(id);
 			if (confirm("Tem certeza que deseja excluir o usuário?")){
@@ -43,14 +43,14 @@
 								$('#loader').load('viewers/usuarios/usuario.lista.php');
 							}
 							else{
-								alert('Erro ao conectar com banco de dados. Aguarde e tente novamente em alguns instantes.');	
+								alert('Erro ao conectar com banco de dados. Aguarde e tente novamente em alguns instantes.');
 							}
 					   },
 					   type: 'POST'
-					});	
+					});
 			}
    	    });
-	
+
 	});
 </script>
 
@@ -63,7 +63,7 @@
   <li class="active">Gerenciar Usuários</li>
 </ol>
 
-<h1> 
+<h1>
 	Lista de Usuários Cadastrados
 </h1>
 
@@ -84,17 +84,17 @@
 <?php
 	$Item = new Usuario();
 	$Item = $Item->ReadAll();
-		
+
 	if(empty($Item)){
-		
+
 		?>
         	<h4 class="well"> Nenhum dado encontrado. </h4>
         <?php
-		
+
 	}
 	else{
 		?>
-        
+
         	<table class="table table-striped table-hover">
                 <thead>
                   <tr>
@@ -103,24 +103,23 @@
                     <th>Matrícula</th>
                   </tr>
                 </thead>
-             
+
                 <tbody>
                 	<?php
-						
+
 						foreach($Item as $itemRow){
 					?>
                             <tr class="">
                                 <td><?php echo $itemRow['nome_usuario']; ?></td>
                                 <td><?php echo $itemRow['email_usuario']; ?></td>
                                 <td><?php echo $itemRow['matricula_usuario']; ?></td>
-                                <td><?php echo $itemRow['celular_treinador']; ?></td>
                             </tr>
                     <?php
 						}
 					?>
                 </tbody>
             </table>
-        
+
         <?php
 	}
 ?>

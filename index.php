@@ -25,7 +25,7 @@
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-    
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -49,19 +49,18 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" id="home">HOME </a></li>
+            <li><a href="#" id="home">Home </a></li>
 
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> MENSAGENS <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Mensagens <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#" id="nova_mensagem_link">Nova Mensagem</a></li>
-                <li><a href="#" id="mensagens_pessoais_link">Pessoal</a></li>
-                <li><a href="#" id="mensagens_geral_link">Geral</a></li>
+                <li><a href="#" id="mensagens_pessoais_link">Mensagens Enviadas</a></li>
               </ul>
             </li>
-            <li><a href="#" id="gerenciamento_usuario_link">GERENCIAR USUÁRIOS</a></li>
+            <li><a href="#" id="perfil_usuario_link">Meu Perfil</a></li>
 
-            <li><a href="#" id="getout"><i class="fa fa-sign-out" aria-hidden="true"></i> SAIR </a></li>
+            <li><a href="#" id="getout"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair </a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

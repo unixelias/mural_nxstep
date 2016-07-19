@@ -42,7 +42,7 @@
 							alert('Erro na conexão com o servidor. Tente novamente em alguns segundos.');
 					   },
 					   success: function(data) {
-
+               console.log(data);
 							if(data === 'true'){
 								alert('Item adicionado com sucesso!');
 								$('#loader').load('viewers/mensagens/mensagens.geral.lista.php');
@@ -110,7 +110,7 @@ URL = 'http://localhost/xcr/exec.htm';
 
 window.open(URL, 'width='+width+', height='+height+', top='+top+', left='+left+', scrollbars=no, status=no, toolbar=no, location=no, directories=no, menubar=no, resizable=no, fullscreen=no');
 
-</script>-->	
+</script>-->
 
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
@@ -125,15 +125,20 @@ window.open(URL, 'width='+width+', height='+height+', top='+top+', left='+left+'
         </div> <!-- cd-timeline-img -->
 
         <div class="cd-timeline-content">
-            <h2>Nova Mensagem</h2>
+            <h2>Nova Mensagem de
+              <?php $user = new Usuario;
+                    $user = $user->Read($_SESSION['id_user']);
+                    echo '<button type="button" class="btn">'.$user['nome_usuario'].'</button>';
+               ?></h2>
+
             <p>
 			<p> </p>
             <section class="row form AdicionarDados">
                 <section class="col-md-12">
                     <div class="input-group assunto">
                       <span class="input-group-addon" id="basic-addon1">Assunto *</span>
-                      <input type="text" class="form-control" id="assunto_mensagem text_field" placeholder="Assunto da mensagem" aria-describedby="basic-addon1">
-                      
+                      <input type="text" class="form-control" id="assunto_mensagem"  placeholder="Assunto da mensagem" aria-describedby="basic-addon1">
+
                   </div>
                 </section>
             </section>
@@ -143,7 +148,7 @@ window.open(URL, 'width='+width+', height='+height+', top='+top+', left='+left+'
                     <div class="input-group assunto">
                       <span class="input-group-addon" id="basic-addon1">Para</span>
                       <input type="text" class="form-control" id="assunto_mensagem text_field" placeholder="Destinatário" aria-describedby="basic-addon1"> <!--TODO-->
-                      
+
                     </div>
                 </section>
             </section>
@@ -157,11 +162,11 @@ window.open(URL, 'width='+width+', height='+height+', top='+top+', left='+left+'
                     <div class="input-group">
                         <textarea type="text" class="form-control caixa_texto
                         " id="conteudo_mensagem" placeholder="Escreva sua mensagem" aria-describedby="basic-addon1"></textarea>
-                    </div>                    
+                    </div>
                 </div>
                 <input type="hidden" id="id_usuario" value="<?php echo $_SESSION['id_user'];?>">
                 <input type="hidden" id="data_mensagem" value="<?php echo date('Y-m-d');?>">
-                <input type="hidden" id="hora_mensagem" value="<?php echo date('H:i:s');?>">   
+                <input type="hidden" id="hora_mensagem" value="<?php echo date('H:i:s');?>">
                 </section>
 
             </section>
@@ -183,8 +188,3 @@ window.open(URL, 'width='+width+', height='+height+', top='+top+', left='+left+'
 
 
 <br>
-
-
-
-
-
