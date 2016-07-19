@@ -2,7 +2,7 @@
 	$(document).ready(function(e) {
 		$('#Voltar').click(function(e) {
 			e.preventDefault();
-			$('#loader').load('viewers/usuarios/usuario.lista.php');
+			document.location.reload();
 		});
 
 		$('#Salvar').click(function(e) {
@@ -17,18 +17,18 @@
 				return alert('Todos os campos com asterisco (*) devem ser preenchidos!!');
 			}
 
-			else{	
+			else{
 				var emailtester = false;
 				var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 				emailtester = re.test(email_usuario);
-				
+
 				if(!emailtester){
 					return alert("Formato de email incorreto. Corrija o campo e tente novamente");
 				}
 
 				else{
 					$.ajax({
-					   url: 'engine/controllers/usuario.php',
+					   url: '../engine/controllers/usuario.php',
 					   data: {
 							id_usuario : null,
 							nome_usuario : nome_usuario,
@@ -44,15 +44,15 @@
 					   success: function(data) {
 							//console.log(data);
 							if(data === 'true'){
-								alert('Item adicionado com sucesso!');
-								$('#loader').load('viewers/usuarios/usuario.lista.php');
+								alert('Cadastro feito com sucesso, bem vindo!');
+								document.location.reload();
 							}
 							else{
-								alert('Erro ao conectar com banco de dados. Aguarde e tente novamente em alguns instantes.');	
+								alert('Erro ao conectar com banco de dados. Aguarde e tente novamente em alguns instantes.');
 							}
 					   },
 					   type: 'POST'
-					});	
+					});
 				}
 			}
 		});
@@ -62,7 +62,7 @@
 </script>
 
 <?php
-	require_once "../../engine/config.php";
+	require_once "../engine/config.php";
 ?>
 
 <ol class="breadcrumb">
@@ -71,7 +71,7 @@
   <li class="active">Adicionar Usuário</li>
 </ol>
 
-<h1> 
+<h1>
 	Cadastro de Usuário
 </h1>
 
@@ -79,7 +79,7 @@
 
 <section class="btn-group" role="group" aria-label="...">
   <button type="button" class="btn btn-warning" id="Voltar"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Voltar</button>
-  
+
   <button type="button" class="btn btn-success" id="Salvar"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Salvar</button>
 </section>
 
@@ -99,7 +99,7 @@
           <input type="text" class="form-control" id="email_usuario" placeholder="Email" aria-describedby="basic-addon1">
         </div>
     </section>
-    
+
     <section class="col-md-4">
     	<div class="input-group">
           <span class="input-group-addon" id="basic-addon1">Senha *</span>

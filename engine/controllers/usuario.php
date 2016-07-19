@@ -26,7 +26,7 @@
 		case 'create':
 
 			$Item = new Usuario();
-			$Item->SetValues($id_usuario, $nome_usuario, $email_usuario, $senha_usuario, $matricula_usuario);
+			$Item->SetValues($id_usuario, $nome_usuario, $email_usuario, sha1($senha_usuario), $matricula_usuario);
 
 			$res = $Item->Create();
 			if ($res === NULL) {

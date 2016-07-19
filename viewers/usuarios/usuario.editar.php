@@ -85,7 +85,8 @@
 					   success: function(data) {
 							if(data === 'true'){
 								alert('Item excluído com sucesso!');
-								$('#loader').load('viewers/usuarios/usuario.lista.php');
+
+                document.location.href="login/";
 							}
 							else{
 								alert('Erro ao conectar com banco de dados. Aguarde e tente novamente em alguns instantes.');

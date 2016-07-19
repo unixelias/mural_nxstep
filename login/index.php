@@ -1,3 +1,15 @@
+<?php session_start();
+  if(!empty($_SESSION)){
+    require_once "../engine/config.php";
+    $user = new Usuario();
+    $user = $user->Read($_SESSION['id_user']);
+    if(empty($user)){
+        session_destroy();
+    }
+    
+  }
+ ?>
+
 <!doctype html>
 <html>
 <head>
@@ -9,6 +21,7 @@
 
 </head>
 
+<main class="container-fluid" id="loader_login">
 <body>
 	<br>
 	<section class="row">
@@ -26,9 +39,12 @@
             </div>
             <br>
             <button class="btn btn-success" id="Logar"> Enviar </button>
+            <button class="btn" id="cadastro"> Cadastre-se </button>
         </section>
         <section class="col-md-3"></section>
     </section>
+
+  </main>
 	<script src="../js/jquery.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
     <script src="../js/login.js"></script>

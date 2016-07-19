@@ -1,8 +1,7 @@
 // JavaScript Document
 
-$(document).ready(function(e) {
-
     $(document).ready(function(e) {
+
         $('#Logar').click(function(e) {
         var email = $('#email_login').val();
     		var senha = $('#senha_login').val();
@@ -30,7 +29,7 @@ $(document).ready(function(e) {
     					}
               else if(data === 'wrong_password'){
                 alert('Senha errada');
-                
+
               }
     					else{
     						alert('Erro ao conectar com banco de dados. Aguarde e tente novamente em alguns instantes.');
@@ -42,6 +41,10 @@ $(document).ready(function(e) {
     		}
         });
 
+        $('#cadastro').click(function(e){
+            e.preventDefault();
 
-        });
-    });
+            	$('#loader_login').load('usuario.adicionar.php');
+          });
+
+});
