@@ -7,15 +7,16 @@
 <head>
 
     <meta charset="utf-8">
-    <title>Sistema :: Login</title>
+    <title>Mural NextStep :: Login</title>
 
     <link rel="stylesheet" href="../css/bootstrap.css">
 
 </head>
 
-<main class="container-fluid" id="loader_login">
+<h2 class="well" align="center" role="heading">Entrar no Sistema</h2>
 <body>
 	<br>
+    <main class="container-fluid" id="loader_login">
 	<section class="row">
     	<section class="col-md-3"></section>
         <section class="col-md-6 text-center well">
@@ -35,8 +36,7 @@
         </section>
         <section class="col-md-3"></section>
     </section>
-
-  </main>
+  	</main>
 	<script src="../js/jquery.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
     <script src="../js/login.js"></script>

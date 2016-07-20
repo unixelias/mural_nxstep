@@ -6,7 +6,7 @@ $(document).ready(function(e) {
 			$('#home').click(function(e) { //carregando parte de uma pagina na pagina principal
 				e.preventDefault();
 				//loader
-				document.location.reload();
+				$('#loader').load('viewers/mensagens/mensagens.geral.lista.php');
 			});
 
 		});
@@ -30,13 +30,23 @@ $(document).ready(function(e) {
 			});
 
 		});
-
+		
 		$(document).ready(function(e) {
 
-			$('#mensagens_geral_link').click(function(e) { //carregando parte de uma pagina na pagina principal
+			$('#mensagens_recebidas_link').click(function(e) { //carregando parte de uma pagina na pagina principal
 				e.preventDefault();
 				//loader
-				$('#loader').load('viewers/mensagens/mensagens.geral.lista.php');
+				$('#loader').load('viewers/mensagens/mensagens.recebidas.lista.php');
+			});
+
+		});
+		
+		$(document).ready(function(e) {
+
+			$('#mensagens_enviadas_link').click(function(e) { //carregando parte de uma pagina na pagina principal
+				e.preventDefault();
+				//loader
+				$('#loader').load('viewers/mensagens/mensagens.enviadas.lista.php');
 			});
 
 		});

@@ -23,4 +23,21 @@ jQuery(document).ready(function($){
 			( $(this).offset().top <= $(window).scrollTop()+$(window).height()*offset && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) && $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
 		});
 	}
+	
+	$('#home').click(function(){
+			$('#content').load('viewers/mensagens/mensagens.geral.lista.php');
+			return false;
+		});
+		
+		var loading = $(
+			'<img id="loading" alt="Carregando" title="Carregando" src="loading.gif" />'
+			).appendTo('#content').hide()
+			loading.ajaxStart(function(){
+				$(this).show();
+			});
+			loading.ajaxStop(function(){
+				$(this).hide();
+			});
+	//Muda a página para "home"
+	$('#content').load('viewers/mensagens/mensagens.geral.lista.php');
 });

@@ -4,13 +4,11 @@
     ?>
     <script>
        document.location.href='login/';
+	   
     </script>
-
-<?php
-  }
-
+ <?php
+ } 
  ?>
-
 <!doctype html>
 <html class="no-js">
 <head>
@@ -21,13 +19,13 @@
 
     <title>Mural NxStep</title>
 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="jquery.js"></script>
+ 
 
 </head>
 
@@ -55,7 +53,8 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Mensagens <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#" id="nova_mensagem_link">Nova Mensagem</a></li>
-                <li><a href="#" id="mensagens_pessoais_link">Mensagens Enviadas</a></li>
+                <li><a href="#" id="mensagens_enviadas_link">Mensagens Enviadas</a></li>
+                <li><a href="#" id="mensagens_recebidas_link">Mensagens Recebidas</a></li>
               </ul>
             </li>
             <li><a href="#" id="perfil_usuario_link">Meu Perfil</a></li>
@@ -70,13 +69,9 @@
     <br />
     <br />
     <main class="container-fluid" id="loader">
-
-    	<h1 id="h1teste">Teste</h1>
+    	<div id="content"></div>
 
     </main>
-
-
-
     <footer class="mural-footer">
     	<p class="text-center footer-texto">Copyright © Next Step 2016. Todos os direitos reservados. </p>
     </footer>

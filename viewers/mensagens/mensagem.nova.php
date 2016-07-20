@@ -115,9 +115,10 @@ window.open(URL, 'width='+width+', height='+height+', top='+top+', left='+left+'
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
   <li><a href="#">Mensagens</a></li>
-  <li><a href="#">Nova Mensagem</a></li>
+  <li class="active">Nova Mensagem</li>
 </ol>
 
+<h2 class="well" align="center" role="heading">Publicar nova Mensagem</h2>
 <section id="cd-timeline" class="cd-container">
     <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-picture">

@@ -235,6 +235,100 @@
 			$DB->close();
 			return $realData;
 		}
+		
+		public function ReadUserEnv_JointInfo($idRemetente){
+			$sql = "
+			SELECT
+
+				t1.id_mensagem,
+				t1.id_usuario,
+				t1.assunto_mensagem,
+				t1.conteudo_mensagem,
+				t1.hora_mensagem,
+				t1.data_mensagem,
+				t2.id_usuario,
+				t2.nome_usuario,
+				t3.id_status
+				FROM
+				mensagem AS t1 ,
+				usuario AS t2 ,
+				status AS t3
+				WHERE
+				t1.id_usuario = t2.id_usuario
+				AND
+				t1.id_mensagem = t3.id_mensagem
+				AND
+				t1.id_usuario = '$idRemetente'
+				ORDER BY data_mensagem
+			";
+
+
+			$DB = new DB();
+			$DB->open();
+			$Data = $DB->fetchData($sql);
+			$realData;
+			if($Data ==NULL){
+				$realData = $Data;
+			}
+			else{
+
+				foreach($Data as $itemData){
+					if(is_bool($itemData)) continue;
+					else{
+						$realData[] = $itemData;
+					}
+				}
+			}
+			$DB->close();
+			return $realData;
+		}
+		
+		public function ReadUserRec_JointInfo($idDestinatario){
+			$sql = "
+			SELECT
+
+				t1.id_mensagem,
+				t1.id_usuario,
+				t1.assunto_mensagem,
+				t1.conteudo_mensagem,
+				t1.hora_mensagem,
+				t1.data_mensagem,
+				t2.id_usuario,
+				t2.nome_usuario,
+				t3.id_status
+				FROM
+				mensagem AS t1 ,
+				usuario AS t2 ,
+				status AS t3
+				WHERE
+				t1.id_usuario = t2.id_usuario
+				AND
+				t1.id_mensagem = t3.id_mensagem
+				AND
+				t3.id_usuario = '$idDestinatario'
+				ORDER BY data_mensagem
+			";
+
+
+			$DB = new DB();
+			$DB->open();
+			$Data = $DB->fetchData($sql);
+			$realData;
+			if($Data ==NULL){
+				$realData = $Data;
+			}
+			else{
+
+				foreach($Data as $itemData){
+					if(is_bool($itemData)) continue;
+					else{
+						$realData[] = $itemData;
+					}
+				}
+			}
+			$DB->close();
+			return $realData;
+		}
 
 
 		/*
