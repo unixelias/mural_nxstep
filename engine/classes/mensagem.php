@@ -228,6 +228,55 @@
 			";
 
 
+						$DB = new DB();
+						$DB->open();
+						$Data = $DB->fetchData($sql);
+						$realData;
+						if($Data ==NULL){
+							$realData = $Data;
+						}
+						else{
+
+							foreach($Data as $itemData){
+								if(is_bool($itemData)) continue;
+								else{
+									$realData[] = $itemData;
+								}
+							}
+						}
+						$DB->close();
+						return $realData;
+					}
+
+
+		public function ReadAll_Geral_Status($id_destinatario,$id_usuario) {
+			$sql = "
+			SELECT
+				t1.id_mensagem,
+				t1.id_usuario,
+				t1.destinatario_mensagem,
+				t1.assunto_mensagem,
+				t1.conteudo_mensagem,
+				t1.hora_mensagem,
+				t1.data_mensagem,
+				t3.id_status,
+				t3.id_mensagem,
+				t3.id_usuario,
+				t3.status_mensagem,
+				t2.nome_usuario,
+				t2.id_usuario
+				FROM
+				mensagem AS t1
+				INNER JOIN `status` AS t3 ON t3.id_mensagem = t1.id_mensagem
+				INNER JOIN usuario AS t2 ON t1.id_usuario = t2.id_usuario
+				WHERE
+				t1.destinatario_mensagem = '$id_destinatario' AND
+				t1.id_usuario = t2.id_usuario AND
+				t3.id_usuario = '$id_usuario'
+
+			";
+
+
 			$DB = new DB();
 			$DB->open();
 			$Data = $DB->fetchData($sql);

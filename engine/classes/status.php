@@ -184,29 +184,43 @@
 
 		//lê a mensagem a partir do status
 
-		public function Read_Geral($id_mensagem,$id_usuario) {
+		public function Read_Geral($id_destinatario,$id_usuario) {
 			$sql = "
 			SELECT
-			t1.id_status,
-			t1.id_mensagem,
-			t1.id_usuario,
-			t1.status_mensagem
-			FROM
-			status AS t1
-			WHERE
-			t1.id_mensagem = '$id_mensagem' AND
-			t1.id_usuario = '$id_usuario'
+	t1.id_status,
+	t1.id_mensagem,
+	t1.id_usuario,
+	t1.status_mensagem,
+	t2.destinatario_mensagem
+	FROM
+	`status` AS t1
+	INNER JOIN mensagem AS t2 ON t1.id_mensagem = t2.id_mensagem
+	WHERE
+	t1.id_usuario = '$id_usuario' AND
+	t2.destinatario_mensagem='$id_destinatario'
 
 			";
 
 
-			$DB = new DB();
-			$DB->open();
-			$Data = $DB->fetchData($sql);
+									$DB = new DB();
+									$DB->open();
+									$Data = $DB->fetchData($sql);
+									$realData;
+									if($Data ==NULL){
+										$realData = $Data;
+									}
+									else{
 
-			$DB->close();
-			return $Data[0];
-		}
+										foreach($Data as $itemData){
+											if(is_bool($itemData)) continue;
+											else{
+												$realData[] = $itemData;
+											}
+										}
+									}
+									$DB->close();
+									return $realData;
+								}
 
 
 		/*

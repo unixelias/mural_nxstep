@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2016-07-21 19:30:17
+Date: 2016-07-22 00:35:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -59,28 +59,14 @@ CREATE TABLE `status` (
   KEY `FK_destinatario` (`id_usuario`),
   CONSTRAINT `FK_destinatario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON UPDATE CASCADE,
   CONSTRAINT `FK_mensagem` FOREIGN KEY (`id_mensagem`) REFERENCES `mensagem` (`id_mensagem`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of status
 -- ----------------------------
-INSERT INTO `status` VALUES ('1', '1', '1', '1');
-INSERT INTO `status` VALUES ('2', '3', '1', '0');
-INSERT INTO `status` VALUES ('3', '1', '5', '1');
-INSERT INTO `status` VALUES ('12', '1', '4', '0');
-INSERT INTO `status` VALUES ('13', '2', '5', '0');
-INSERT INTO `status` VALUES ('14', '1', '5', '1');
-INSERT INTO `status` VALUES ('15', '6', '3', '0');
-INSERT INTO `status` VALUES ('16', '6', '5', '0');
-INSERT INTO `status` VALUES ('17', '7', '5', '0');
-INSERT INTO `status` VALUES ('18', '5', '5', '0');
-INSERT INTO `status` VALUES ('19', '9', '5', '1');
-INSERT INTO `status` VALUES ('20', '8', '5', '0');
-INSERT INTO `status` VALUES ('21', '1', '5', '1');
-INSERT INTO `status` VALUES ('22', '1', '5', '1');
-INSERT INTO `status` VALUES ('23', '1', '5', '1');
-INSERT INTO `status` VALUES ('24', '1', '5', '0');
-INSERT INTO `status` VALUES ('25', '3', '5', '0');
+INSERT INTO `status` VALUES ('26', '1', '4', '1');
+INSERT INTO `status` VALUES ('27', '2', '4', '0');
+INSERT INTO `status` VALUES ('28', '3', '4', '0');
 
 -- ----------------------------
 -- Table structure for usuario
