@@ -29,9 +29,7 @@
 	}
 	else{
 		?>
-        
         <section id="cd-timeline" class="cd-container">
-        
 		<?php
 			foreach($Mensagem as $itemRow){
 				
@@ -56,8 +54,14 @@
 				<h2>Para: <?php echo $Usuario['nome_usuario']; ?></h2>
                 <p><?php echo $itemRow['assunto_mensagem']; ?></p>
 				<p><?php echo $itemRow['conteudo_mensagem']; ?></p>
-				<a href="#0" class="cd-read-more"><?php echo $statusMensagem; ?></a>
-				<span class="cd-date"><?php echo $itemRow['data_mensagem']; ?></span>
+				<button type="button" class="cd-read-more btn
+					<?php
+                        if($statusMensagem==='Não Lida') {echo 'btn-warning Status';}
+                        else if($statusMensagem==='Lida') {echo 'btn-sucess Status';}
+                    ?>">
+                	<?php echo $statusMensagem; ?>
+                </button>
+                <span class="cd-date"><?php echo $itemRow['data_mensagem']; ?></span>
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->
         <?php

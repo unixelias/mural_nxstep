@@ -79,6 +79,7 @@
 					mensagem AS t1
 				WHERE
 					t1.id_mensagem  = '$id'
+				
 
 			";
 
@@ -105,6 +106,7 @@
 					 t1.data_mensagem
 				FROM
 					mensagem AS t1
+				ORDER BY data_mensagem DESC, hora_mensagem DESC
 
 
 			";
@@ -146,6 +148,7 @@
 					 t1.data_mensagem
 				FROM
 					mensagem AS t1
+				ORDER BY data_mensagem DESC, hora_mensagem DESC
 
 
 				LIMIT $inicio, $registros;
@@ -223,6 +226,7 @@
 					WHERE
 					t1.destinatario_mensagem = '$destinatario' AND
 					t1.id_usuario = t2.id_usuario
+					ORDER BY data_mensagem DESC, hora_mensagem DESC
 
 
 			";
@@ -263,10 +267,11 @@
 							t1.hora_mensagem,
 							t1.data_mensagem
 					FROM
-											mensagem AS t1
-											INNER JOIN usuario AS t2 ON t1.id_usuario = t2.id_usuario
+							mensagem AS t1
+							INNER JOIN usuario AS t2 ON t1.id_usuario = t2.id_usuario
 					WHERE
-											t1.id_usuario = '4'
+							t1.id_usuario = '4'
+							ORDER BY data_mensagem DESC, hora_mensagem DESC
 	
 					";
 	
@@ -317,6 +322,7 @@
 					t1.destinatario_mensagem = '$id_destinatario' AND
 					t1.id_usuario = t2.id_usuario AND
 					t3.id_usuario = '$id_remetente'
+					ORDER BY data_mensagem DESC, hora_mensagem DESC
 	
 				";
 	
@@ -365,7 +371,7 @@
 				t1.id_mensagem = t3.id_mensagem 
 				AND 
 				t1.id_usuario = '$idRemetente' 
-				ORDER BY data_mensagem 
+				ORDER BY data_mensagem DESC, hora_mensagem DESC
 			  "; 
 		 
 		 
@@ -413,7 +419,7 @@
 				t1.id_mensagem = t3.id_mensagem 
 				AND 
 				t3.id_usuario = '$idDestinatario' 
-				ORDER BY data_mensagem 
+				ORDER BY data_mensagem DESC, hora_mensagem DESC
 			  "; 
 		 
 		 

@@ -44,7 +44,7 @@
 							alert('Erro na conexão com o servidor. Tente novamente em alguns segundos.');
 					   },
 					   success: function(data) {
-              // console.log(data);
+              			// console.log(data);
 							if(data === 'true'){
 								alert('Item adicionado com sucesso!');
 								$('#loader').load('viewers/mensagens/mensagens.geral.lista.php');
@@ -58,10 +58,6 @@
 					   type: 'POST'
 					});
 			}
-
-			//3 transferir os dados dos inputs para o arquivo q ira tratar
-
-			//4 observar a resposta, e falar pra usuario o que aconteceu
 		});
 	});
 </script>
