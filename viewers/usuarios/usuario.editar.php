@@ -53,7 +53,7 @@
 							}
 							else{
 								alert('Erro ao conectar com banco de dados. Aguarde e tente novamente em alguns instantes.');
-								console.log(data);
+								//console.log(data);
 							}
 					   },
 					   type: 'POST'

@@ -25,12 +25,8 @@
         status_mensagem = '1';
       }
 
-      console.log(id_status);
-      console.log(id_mensagem);
-      console.log(id_usuario);
-      console.log(status_mensagem);
 
- 				$.ajax({
+      	$.ajax({
  				   url: 'engine/controllers/status.php',
            data: {
               id_status : id_status,
@@ -105,7 +101,7 @@
 
 $Mensagens = new Mensagem();
 $Mensagens = $Mensagens->ReadAll_Geral_Status('-1',$_SESSION['id_user']);
-var_dump($Mensagens);
+
   foreach ($Mensagens as $itemRow) {
       switch ($itemRow['status_mensagem']) {
         case '0':

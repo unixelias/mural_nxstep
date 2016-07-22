@@ -21,7 +21,7 @@
 			var hora_mensagem = $('#hora_mensagem').val();
 			var data_mensagem = $('#data_mensagem').val();
 
-  
+
 			//2 validar os inputs
 			if(id_usuario === "" || destinatario_mensagem === "" || assunto_mensagem === "" || conteudo_mensagem === "" || hora_mensagem === "" || data_mensagem === ""){
 				return alert('Todos os campos com asterisco (*) devem ser preenchidos!!');
@@ -44,7 +44,7 @@
 							alert('Erro na conexão com o servidor. Tente novamente em alguns segundos.');
 					   },
 					   success: function(data) {
-               console.log(data);
+              // console.log(data);
 							if(data === 'true'){
 								alert('Item adicionado com sucesso!');
 								$('#loader').load('viewers/mensagens/mensagens.geral.lista.php');
