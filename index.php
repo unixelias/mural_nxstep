@@ -73,10 +73,9 @@
     	<p class="text-center footer-texto">Copyright © Next Step 2016. Todos os direitos reservados. </p>
     </footer>
 	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/jquerymask.min.js"></script>
-    <script src="js/jquery-3.1.0.min.js"></script>
 	<script src="js/main.js"></script>
     <script src="js/timeline.js"></script>
 

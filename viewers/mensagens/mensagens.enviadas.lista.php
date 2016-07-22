@@ -6,16 +6,16 @@
 
     });
 </script>
-
-<?php
-	require_once "../../engine/config.php";
-?>
 <ol class="breadcrumb">
     <li><a href="#">Home</a></li>
     <li><a href="#">Mensagens</a></li>
     <li class="active">Mensagens Enviadas</li>
 </ol>
+
+<h2 class="well" align="center" role="heading">Mensagens enviadas por <?php echo $user['nome_usuario']; ?></h2>
+
 <?php
+	require_once "../../engine/config.php";
 
 	$user = new Usuario;
 	$user = $user->Read($_SESSION['id_user']);
@@ -29,7 +29,7 @@
 	}
 	else{
 		?>
-        <h2 class="well" align="center" role="heading">Mensagens enviadas por <?php echo $user['nome_usuario']; ?></h2>
+        
         <section id="cd-timeline" class="cd-container">
         
 		<?php
@@ -67,7 +67,6 @@
 <?php
       }
 ?>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/timeline.js"></script>
 <script src="js/modernizr.js"></script> <!-- Modernizr -->

@@ -57,30 +57,16 @@
 
 					   type: 'POST'
 					});
-
 			}
 
 			//3 transferir os dados dos inputs para o arquivo q ira tratar
 
 			//4 observar a resposta, e falar pra usuario o que aconteceu
 		});
-
-
-
-
-
 	});
 </script>
 
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
-
     <title>Mural NxStep</title>
-
-    <link rel="stylesheet" href="../../css/bootstrap.css">
-	<link rel="stylesheet" href="../../css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="../../css/style.css"> <!-- Resource style -->
-	
 
 <?php
 	require_once "../../engine/config.php";
@@ -168,9 +154,7 @@
     </div> <!-- cd-timeline-block -->
 
 </section> <!-- cd-timeline -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/main.js"></script> <!-- Resource jQuery -->
-<script src="js/modernizr.js"></script> <!-- Modernizr -->
 
 
 <br>

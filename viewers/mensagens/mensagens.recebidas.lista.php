@@ -1,8 +1,6 @@
 <?php session_start();
  ?>
-
-
-  <script>
+<script>
   	$(document).ready(function(e) {
 
   		$('.Status').click(function(e) {
@@ -58,26 +56,18 @@
   		});
 
   	});
-  </script>
-
- <!--<script src="js/modernizr.js"></script> <!-- Modernizr -->
-<?php
-	require_once "../../engine/config.php";
-?>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+</script>
 <!--Breadrumb-->
 <ol class="breadcrumb">
     <li><a href="#">Home</a></li>
     <li><a href="#">Mensagens</a></li>
     <li class="active">Mensagens Recebidas</li>
 </ol>
-
 <?php
+	require_once "../../engine/config.php";
+
 	$Mensagem = new Mensagem; //instancia Mensagem
 	$Mensagem = $Mensagem->ReadAll_Join_Destinatario($_SESSION['id_user']); //lê todos os registros no
-
 
 	if(empty($Mensagem)){
 		?>
@@ -153,7 +143,5 @@ $Mensagens = $Mensagens->ReadAll_Geral_Status($_SESSION['id_user'],$_SESSION['id
       }
 ?>
 
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/timeline.js"></script>
