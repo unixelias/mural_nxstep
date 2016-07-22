@@ -108,7 +108,7 @@
                 <h2><?php echo $itemRow['nome_usuario']; ?></h2>
                 <p><?php echo $itemRow['assunto_mensagem']; ?></p>
                 <p><?php echo $itemRow['conteudo_mensagem']; ?></p>
-                <button type="button" style="float: right"class="btn
+                <button type="button" class="cd-read-more btn
                     <?php
                         if($status_mensagem==='Não Lida') {echo 'btn-warning Status';}
                         else if($status_mensagem==='Lida') {echo 'btn-sucess Status';}

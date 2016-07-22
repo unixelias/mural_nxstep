@@ -1,4 +1,4 @@
-.<?php session_start();
+<?php session_start();
  ?>
 
 
@@ -66,6 +66,13 @@
 ?>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--Breadrumb-->
+<ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Mensagens</a></li>
+    <li class="active">Mensagens Recebidas</li>
+</ol>
 
 <?php
 	$Mensagem = new Mensagem; //instancia Mensagem
