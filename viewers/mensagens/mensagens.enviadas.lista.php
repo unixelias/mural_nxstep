@@ -5,8 +5,6 @@
 	$(document).ready(function(e) {
 
     });
-
-
 </script>
 <script src="js/modernizr.js"></script> <!-- Modernizr -->
 <?php
