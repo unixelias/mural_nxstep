@@ -5,7 +5,7 @@
 	$(document).ready(function(e) {
 		$('#Voltar').click(function(e) {
 			e.preventDefault();
-			$('#loader').load('viewers/usuarios/usuario.lista.php');
+			document.location.reload();
 		});
 
 		$('#Salvar').click(function(e) {

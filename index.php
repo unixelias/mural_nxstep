@@ -4,10 +4,10 @@
     ?>
     <script>
        document.location.href='login/';
-	   
+
     </script>
  <?php
- } 
+ }
  ?>
 <!doctype html>
 <html class="no-js">
@@ -15,17 +15,17 @@
 
     <meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	   <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
     <title>Mural NxStep</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-     <script src="jquery.js"></script>
- 
+	     <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	    <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	       <script src="js/modernizr.js"></script> <!-- Modernizr -->
+       <script src="js/jquery.js"></script>
+
 
 </head>
 
@@ -57,7 +57,14 @@
                 <li><a href="#" id="mensagens_recebidas_link">Mensagens Recebidas</a></li>
               </ul>
             </li>
-            <li><a href="#" id="perfil_usuario_link">Meu Perfil</a></li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Usuários <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                              <li><a href="#" id="perfil_usuario_link">Meu Perfil</a></li>
+                              <li><a href="#" id="perfis_usuarios_link">Lista de Usuários</a></li>
+
+                          </ul>
+                        </li>
 
             <li><a href="#" id="getout"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair </a></li>
           </ul>

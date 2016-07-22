@@ -7,8 +7,9 @@
 	
 	$id_mensagem = $_POST['id_mensagem'];
 	$id_usuario = $_POST['id_usuario'];
-	$conteudo_mensagem = $_POST['conteudo_mensagem'];
+	$destinatario_mensagem = $_POST['destinatario_mensagem'];
 	$assunto_mensagem = $_POST['assunto_mensagem'];
+	$conteudo_mensagem = $_POST['conteudo_mensagem'];
 	$hora_mensagem = $_POST['hora_mensagem'];
 	$data_mensagem = $_POST['data_mensagem'];
 	
@@ -18,7 +19,7 @@
 	
 	//parte3
 	$Item = new Mensagem();
-	$Item->SetValues($id_mensagem, $id_usuario, $conteudo_mensagem, $assunto_mensagem, $hora_mensagem, $data_mensagem); 
+	$Item->SetValues($id_mensagem, $id_usuario, $destinatario_mensagem, $assunto_mensagem, $conteudo_mensagem, $hora_mensagem, $data_mensagem); 
 	
 	
 		

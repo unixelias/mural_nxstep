@@ -15,14 +15,15 @@
 
 			//1 instansciar e recuperar valores dos inputs
 			var id_usuario = $('#id_usuario').val();
+      var destinatario_mensagem = $('#destinatario_mensagem').val();
 			var assunto_mensagem = $('#assunto_mensagem').val();
 			var conteudo_mensagem = $('#conteudo_mensagem').val();
 			var hora_mensagem = $('#hora_mensagem').val();
 			var data_mensagem = $('#data_mensagem').val();
 
-
+  
 			//2 validar os inputs
-			if(id_usuario === "" || assunto_mensagem === "" || conteudo_mensagem === "" || hora_mensagem === "" || data_mensagem === ""){
+			if(id_usuario === "" || destinatario_mensagem === "" || assunto_mensagem === "" || conteudo_mensagem === "" || hora_mensagem === "" || data_mensagem === ""){
 				return alert('Todos os campos com asterisco (*) devem ser preenchidos!!');
 			}
 			else{
@@ -32,6 +33,7 @@
 					   data: {
 						   id_mensagem : null,
 							id_usuario : id_usuario,
+              destinatario_mensagem : destinatario_mensagem,
 							assunto_mensagem : assunto_mensagem,
 							conteudo_mensagem : conteudo_mensagem,
 							hora_mensagem : hora_mensagem,
@@ -143,17 +145,28 @@ window.open(URL, 'width='+width+', height='+height+', top='+top+', left='+left+'
                   </div>
                 </section>
             </section>
-            <br />
-            <section class="row form AdicionarDados">
-                <section class="col-md-12">
-                    <div class="input-group assunto">
-                      <span class="input-group-addon" id="basic-addon1">Para</span>
-                      <input type="text" class="form-control" id="assunto_mensagem text_field" placeholder="Destinatário" aria-describedby="basic-addon1"> <!--TODO-->
+  <br/>
+  <section class="row formAdicionarDados">
+            <section class="col-md-6">
+              <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">Destinatário*</span>
+                <select class="form-control" id="destinatario_mensagem">
+                  <option value="<?php echo '-1'; ?>">Todos</option>
+                        <?php
+                        $Usuario = new Usuario();
+                        $Usuario = $Usuario->ReadAll();
 
-                    </div>
-                </section>
+                        foreach ($Usuario as $ItemRow) {
+                          ?>
+                          <option type="text" value="<?php echo $ItemRow['id_usuario']; ?>"><?php echo $ItemRow['nome_usuario']; ?></option>
+
+                          <?php	} ?>
+
+                  </select>
+              </div>
             </section>
-            <br />
+          </section>
+            <br/>
             <section class="row formAdicionarDados">
                 <section class="col-md-12">
                 <div class="panel panel-default">

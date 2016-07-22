@@ -7,8 +7,9 @@
 		//Nome das variaveis devem ser de acordo com as colunas da tabela respectiva no bd
 		private $id_mensagem;
 		private $id_usuario;
-		private $conteudo_mensagem;
+		private $destinatario_mensagem;
 		private $assunto_mensagem;
+		private $conteudo_mensagem;
 		private $hora_mensagem;
 		private $data_mensagem;
 
@@ -16,11 +17,12 @@
 		//setters
 
 		//Funcao que seta uma instancia da classe
-		public function SetValues($id_mensagem, $id_usuario, $conteudo_mensagem, $assunto_mensagem, $hora_mensagem, $data_mensagem) {
+		public function SetValues($id_mensagem, $id_usuario, $destinatario_mensagem, $assunto_mensagem, $conteudo_mensagem, $hora_mensagem, $data_mensagem) {
 			$this->id_mensagem = $id_mensagem;
 			$this->id_usuario = $id_usuario;
-			$this->conteudo_mensagem = $conteudo_mensagem;
+			$this->destinatario_mensagem = $destinatario_mensagem;
 			$this->assunto_mensagem = $assunto_mensagem;
+			$this->conteudo_mensagem = $conteudo_mensagem;
 			$this->hora_mensagem = $hora_mensagem;
 			$this->data_mensagem = $data_mensagem;
 
@@ -37,8 +39,9 @@
 						  (
 				 			id_mensagem,
 				 			id_usuario,
+				 			destinatario_mensagem,
+				 			assunto_mensagem,
 				 			conteudo_mensagem,
-							assunto_mensagem,
 				 			hora_mensagem,
 				 			data_mensagem
 						  )
@@ -46,8 +49,9 @@
 					(
 				 			'$this->id_mensagem',
 				 			'$this->id_usuario',
+				 			'$this->destinatario_mensagem',
+				 			'$this->assunto_mensagem',
 				 			'$this->conteudo_mensagem',
-							'$this->assunto_mensagem',
 				 			'$this->hora_mensagem',
 				 			'$this->data_mensagem'
 					);
@@ -66,8 +70,9 @@
 				SELECT
 					 t1.id_mensagem,
 					 t1.id_usuario,
-					 t1.conteudo_mensagem,
+					 t1.destinatario_mensagem,
 					 t1.assunto_mensagem,
+					 t1.conteudo_mensagem,
 					 t1.hora_mensagem,
 					 t1.data_mensagem
 				FROM
@@ -93,8 +98,9 @@
 				SELECT
 					 t1.id_mensagem,
 					 t1.id_usuario,
-					 t1.conteudo_mensagem,
+					 t1.destinatario_mensagem,
 					 t1.assunto_mensagem,
+					 t1.conteudo_mensagem,
 					 t1.hora_mensagem,
 					 t1.data_mensagem
 				FROM
@@ -133,8 +139,9 @@
 				SELECT
 					 t1.id_mensagem,
 					 t1.id_usuario,
-					 t1.conteudo_mensagem,
+					 t1.destinatario_mensagem,
 					 t1.assunto_mensagem,
+					 t1.conteudo_mensagem,
 					 t1.hora_mensagem,
 					 t1.data_mensagem
 				FROM
@@ -159,8 +166,9 @@
 				UPDATE mensagem SET
 
 				  id_usuario = '$this->id_usuario',
-				  conteudo_mensagem = '$this->conteudo_mensagem',
+				  destinatario_mensagem = '$this->destinatario_mensagem',
 				  assunto_mensagem = '$this->assunto_mensagem',
+				  conteudo_mensagem = '$this->conteudo_mensagem',
 				  hora_mensagem = '$this->hora_mensagem',
 				  data_mensagem = '$this->data_mensagem'
 
@@ -191,122 +199,32 @@
 		}
 
 
-		public function ReadAll_JointInfo(){
+		/*
+			--------------------------------------------------
+			Viewer SPecific methods -- begin
+			--------------------------------------------------
+
+		*/
+
+		public function ReadAll_Geral($destinatario) {
 			$sql = "
 			SELECT
-
-				t1.id_mensagem,
-				t1.id_usuario,
-				t1.assunto_mensagem,
-				t1.conteudo_mensagem,
-				t1.hora_mensagem,
-				t1.data_mensagem,
-				t2.id_usuario,
-				t2.nome_usuario,
-				t3.id_status
-				FROM
-				mensagem AS t1 ,
-				usuario AS t2 ,
-				status AS t3
-				WHERE
-				t1.id_usuario = t2.id_usuario
-				AND
-				t1.id_mensagem = t3.id_mensagem
-				ORDER BY data_mensagem
-			";
+					t1.id_mensagem,
+					t1.id_usuario,
+					t1.destinatario_mensagem,
+					t1.assunto_mensagem,
+					t1.conteudo_mensagem,
+					t1.hora_mensagem,
+					t1.data_mensagem,
+					t2.nome_usuario
+					FROM
+					mural_nxstep.mensagem AS t1 ,
+					mural_nxstep.usuario AS t2
+					WHERE
+					t1.destinatario_mensagem = '$destinatario' AND
+					t1.id_usuario = t2.id_usuario
 
 
-			$DB = new DB();
-			$DB->open();
-			$Data = $DB->fetchData($sql);
-			$realData;
-			if($Data ==NULL){
-				$realData = $Data;
-			}
-			else{
-
-				foreach($Data as $itemData){
-					if(is_bool($itemData)) continue;
-					else{
-						$realData[] = $itemData;
-					}
-				}
-			}
-			$DB->close();
-			return $realData;
-		}
-		
-		public function ReadUserEnv_JointInfo($idRemetente){
-			$sql = "
-			SELECT
-
-				t1.id_mensagem,
-				t1.id_usuario,
-				t1.assunto_mensagem,
-				t1.conteudo_mensagem,
-				t1.hora_mensagem,
-				t1.data_mensagem,
-				t2.id_usuario,
-				t2.nome_usuario,
-				t3.id_status
-				FROM
-				mensagem AS t1 ,
-				usuario AS t2 ,
-				status AS t3
-				WHERE
-				t1.id_usuario = t2.id_usuario
-				AND
-				t1.id_mensagem = t3.id_mensagem
-				AND
-				t1.id_usuario = '$idRemetente'
-				ORDER BY data_mensagem
-			";
-
-
-			$DB = new DB();
-			$DB->open();
-			$Data = $DB->fetchData($sql);
-			$realData;
-			if($Data ==NULL){
-				$realData = $Data;
-			}
-			else{
-
-				foreach($Data as $itemData){
-					if(is_bool($itemData)) continue;
-					else{
-						$realData[] = $itemData;
-					}
-				}
-			}
-			$DB->close();
-			return $realData;
-		}
-		
-		public function ReadUserRec_JointInfo($idDestinatario){
-			$sql = "
-			SELECT
-
-				t1.id_mensagem,
-				t1.id_usuario,
-				t1.assunto_mensagem,
-				t1.conteudo_mensagem,
-				t1.hora_mensagem,
-				t1.data_mensagem,
-				t2.id_usuario,
-				t2.nome_usuario,
-				t3.id_status
-				FROM
-				mensagem AS t1 ,
-				usuario AS t2 ,
-				status AS t3
-				WHERE
-				t1.id_usuario = t2.id_usuario
-				AND
-				t1.id_mensagem = t3.id_mensagem
-				AND
-				t3.id_usuario = '$idDestinatario'
-				ORDER BY data_mensagem
 			";
 
 
@@ -344,8 +262,9 @@
 		function __construct() {
 			$this->id_mensagem;
 			$this->id_usuario;
-			$this->conteudo_mensagem;
+			$this->destinatario_mensagem;
 			$this->assunto_mensagem;
+			$this->conteudo_mensagem;
 			$this->hora_mensagem;
 			$this->data_mensagem;
 
@@ -356,8 +275,9 @@
 		function __destruct() {
 			$this->id_mensagem;
 			$this->id_usuario;
-			$this->conteudo_mensagem;
+			$this->destinatario_mensagem;
 			$this->assunto_mensagem;
+			$this->conteudo_mensagem;
 			$this->hora_mensagem;
 			$this->data_mensagem;
 

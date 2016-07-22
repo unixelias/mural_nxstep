@@ -102,7 +102,7 @@
 
     <section class="col-md-4">
     	<div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">Senha *</span>
+          <span class="input-group-addon" id="basic-addon1">Matrícula *</span>
           <input type="text" class="form-control" id="matricula_usuario" placeholder="Matrícula" aria-describedby="basic-addon1">
         </div>
     </section>

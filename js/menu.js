@@ -10,13 +10,13 @@ $(document).ready(function(e) {
 			});
 
 		});
-		
+
 		$(document).ready(function(e) {
 
-			$('#cadastro').click(function(e) { //carregando parte de uma pagina na pagina principal
+			$('#perfis_usuarios_link').click(function(e) { //carregando parte de uma pagina na pagina principal
 				e.preventDefault();
 				//loader
-				$('#loader').load('viewers/usuarios/usuario.editar.php');
+				$('#loader').load('viewers/usuarios/usuario.lista.php');
 			});
 
 		});
@@ -26,11 +26,11 @@ $(document).ready(function(e) {
 			$('#perfil_usuario_link').click(function(e) { //carregando parte de uma pagina na pagina principal
 				e.preventDefault();
 				//loader
-				$('#loader').load('login/usuario.adicionar.php');
+				$('#loader').load('viewers/usuarios/usuario.editar.php');
 			});
 
 		});
-		
+
 		$(document).ready(function(e) {
 
 			$('#mensagens_recebidas_link').click(function(e) { //carregando parte de uma pagina na pagina principal
@@ -40,7 +40,7 @@ $(document).ready(function(e) {
 			});
 
 		});
-		
+
 		$(document).ready(function(e) {
 
 			$('#mensagens_enviadas_link').click(function(e) { //carregando parte de uma pagina na pagina principal
