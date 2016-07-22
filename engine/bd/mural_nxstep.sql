@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2016-07-22 00:35:24
+Date: 2016-07-22 15:44:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -39,11 +39,11 @@ INSERT INTO `mensagem` VALUES ('1', '1', '-1', 'Teste', 'teste', '00:04:47', '20
 INSERT INTO `mensagem` VALUES ('2', '5', '-1', 'Teste', 'teste', '11:54:26', '2016-07-21');
 INSERT INTO `mensagem` VALUES ('3', '2', '-1', 'Assunto da mensagem', 'jkhdkjahdkjashdkjahsdkjashdhsakjdhkajshdkahsdhjashdjhsakjdhakjsdjahskjsdkajhdkjahsdkjhaskdljhsalkdjhsalkdhaskljdhsakjhdakjshdhakjhdklajshdljsahdkjahsdlkjashd', '12:27:04', '2016-07-21');
 INSERT INTO `mensagem` VALUES ('4', '4', '1', 'Teste', 'Natan', '15:23:02', '2016-07-21');
-INSERT INTO `mensagem` VALUES ('5', '4', '5', 'Teste', 'Natan1', '15:41:39', '2016-07-21');
-INSERT INTO `mensagem` VALUES ('6', '4', '5', 'todos', 'todos', '15:42:19', '2016-07-21');
-INSERT INTO `mensagem` VALUES ('7', '4', '5', 'anyone', 'este2', '15:42:45', '2016-07-21');
-INSERT INTO `mensagem` VALUES ('8', '5', '5', 'Teste', 'c', '19:03:55', '2016-07-21');
-INSERT INTO `mensagem` VALUES ('9', '2', '5', 'Teste', 'Teste', '00:00:00', '0000-00-00');
+INSERT INTO `mensagem` VALUES ('5', '4', '4', 'Teste', 'Natan1', '15:41:39', '2016-07-21');
+INSERT INTO `mensagem` VALUES ('6', '4', '4', 'todos', 'todos', '15:42:19', '2016-07-21');
+INSERT INTO `mensagem` VALUES ('7', '4', '4', 'anyone', 'este2', '15:42:45', '2016-07-21');
+INSERT INTO `mensagem` VALUES ('8', '5', '4', 'Teste', 'c', '19:03:55', '2016-07-21');
+INSERT INTO `mensagem` VALUES ('9', '2', '4', 'Teste', 'Teste', '00:00:00', '0000-00-00');
 
 -- ----------------------------
 -- Table structure for status
@@ -59,14 +59,19 @@ CREATE TABLE `status` (
   KEY `FK_destinatario` (`id_usuario`),
   CONSTRAINT `FK_destinatario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON UPDATE CASCADE,
   CONSTRAINT `FK_mensagem` FOREIGN KEY (`id_mensagem`) REFERENCES `mensagem` (`id_mensagem`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of status
 -- ----------------------------
-INSERT INTO `status` VALUES ('26', '1', '4', '1');
-INSERT INTO `status` VALUES ('27', '2', '4', '0');
-INSERT INTO `status` VALUES ('28', '3', '4', '0');
+INSERT INTO `status` VALUES ('29', '6', '4', '0');
+INSERT INTO `status` VALUES ('30', '7', '4', '0');
+INSERT INTO `status` VALUES ('31', '8', '4', '0');
+INSERT INTO `status` VALUES ('32', '9', '4', '0');
+INSERT INTO `status` VALUES ('33', '9', '4', '0');
+INSERT INTO `status` VALUES ('34', '1', '4', '0');
+INSERT INTO `status` VALUES ('35', '2', '4', '0');
+INSERT INTO `status` VALUES ('36', '3', '4', '0');
 
 -- ----------------------------
 -- Table structure for usuario

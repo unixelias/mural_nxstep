@@ -206,7 +206,7 @@
 
 		*/
 
-		public function ReadAll_Geral($destinatario) {
+		public function ReadAll_Join_Destinatario($destinatario) {
 			$sql = "
 			SELECT
 					t1.id_mensagem,
@@ -249,7 +249,51 @@
 					}
 
 
-		public function ReadAll_Geral_Status($id_destinatario,$id_usuario) {
+
+						public function ReadAll_Join_Enviadas($id_remetente) {
+										$sql = "
+										SELECT
+												t1.id_mensagem,
+												t1.id_usuario,
+												t1.destinatario_mensagem,
+												t2.nome_usuario,
+												t2.id_usuario,
+												t1.assunto_mensagem,
+												t1.conteudo_mensagem,
+												t1.hora_mensagem,
+												t1.data_mensagem
+										FROM
+																mensagem AS t1
+																INNER JOIN usuario AS t2 ON t1.id_usuario = t2.id_usuario
+										WHERE
+																t1.id_usuario = '4'
+
+										";
+
+
+										$DB = new DB();
+										$DB->open();
+										$Data = $DB->fetchData($sql);
+										$realData;
+										if($Data ==NULL){
+											$realData = $Data;
+										}
+										else{
+
+											foreach($Data as $itemData){
+												if(is_bool($itemData)) continue;
+												else{
+													$realData[] = $itemData;
+												}
+											}
+										}
+										$DB->close();
+										return $realData;
+									}
+
+
+
+		public function ReadAll_Geral_Status($id_destinatario,$id_remetente) {
 			$sql = "
 			SELECT
 				t1.id_mensagem,
@@ -272,7 +316,7 @@
 				WHERE
 				t1.destinatario_mensagem = '$id_destinatario' AND
 				t1.id_usuario = t2.id_usuario AND
-				t3.id_usuario = '$id_usuario'
+				t3.id_usuario = '$id_remetente'
 
 			";
 
@@ -296,6 +340,8 @@
 			$DB->close();
 			return $realData;
 		}
+
+
 
 
 		/*

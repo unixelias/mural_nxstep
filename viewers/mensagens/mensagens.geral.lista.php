@@ -41,7 +41,7 @@
  				   success: function(data) {
 
  						if(data === 'true'){
- 							alert("Status Alterado");
+
               $('#loader').load('viewers/mensagens/mensagens.geral.lista.php');
  						}
 
@@ -68,7 +68,7 @@
 
 <?php
 	$Mensagem = new Mensagem; //instancia Mensagem
-	$Mensagem = $Mensagem->ReadAll_Geral('-1'); //lê todos os registros no
+	$Mensagem = $Mensagem->ReadAll_Join_Destinatario('-1'); //lê todos os registros no
 
 	if(empty($Mensagem)){
 		?>
@@ -91,11 +91,10 @@
     $Status = $Status->Read_Geral('-1',$_SESSION['id_user']);
 
     if(count($Mensagem)!=count($Status)){
-        for ($i=count($Status); $i < count($Mensagem) ; $i=$i+1) {
+        for ($i=0; $i < count($Mensagem) ; $i=$i+1) {
           $novo_status = new Status();
           $novo_status->SetValues('',$Mensagem[$i]['id_mensagem'],$_SESSION['id_user'],'0');
           $novo_status->Create();
-
         }
     }
 
@@ -137,7 +136,7 @@ $Mensagens = $Mensagens->ReadAll_Geral_Status('-1',$_SESSION['id_user']);
              <?php echo $status_mensagem; ?>
         </button>
 
-        <span class="cd-date"><?php echo $itemRow['data_mensagem']; ?></span>
+        <span class="cd-date"><?php echo ExibeData($itemRow['data_mensagem']); ?></span>
 
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->

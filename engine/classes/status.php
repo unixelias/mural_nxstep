@@ -187,17 +187,17 @@
 		public function Read_Geral($id_destinatario,$id_usuario) {
 			$sql = "
 			SELECT
-	t1.id_status,
-	t1.id_mensagem,
-	t1.id_usuario,
-	t1.status_mensagem,
-	t2.destinatario_mensagem
-	FROM
-	`status` AS t1
-	INNER JOIN mensagem AS t2 ON t1.id_mensagem = t2.id_mensagem
-	WHERE
-	t1.id_usuario = '$id_usuario' AND
-	t2.destinatario_mensagem='$id_destinatario'
+					t1.id_status,
+					t1.id_mensagem,
+					t1.id_usuario,
+					t1.status_mensagem,
+					t2.destinatario_mensagem
+					FROM
+					`status` AS t1
+					INNER JOIN mensagem AS t2 ON t1.id_mensagem = t2.id_mensagem
+					WHERE
+					t1.id_usuario = '$id_usuario' AND
+					t2.destinatario_mensagem='$id_destinatario'
 
 			";
 

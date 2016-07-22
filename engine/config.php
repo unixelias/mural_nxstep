@@ -29,4 +29,9 @@
 		return $anoMsg[0];
 	}
 
+	function Showhm($hora){
+		$horas = explode(':', $hora);
+		echo $horas[0].':'.$horas[1];
+	}
+
 ?>
