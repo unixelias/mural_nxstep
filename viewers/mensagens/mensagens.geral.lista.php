@@ -12,20 +12,20 @@
  			//alert(id);
 			var dados = $(this).attr('id');
 			var corrige = dados.split(' ');
-			
+
 			var id_status = corrige[0];
 			var id_mensagem = corrige[1];
 			var id_usuario = corrige[2];
 			var status_mensagem = corrige[3];
-			
-			
+
+
 			if(status_mensagem === '1'){
 			status_mensagem = '0';
 			}
 			else{
 			status_mensagem = '1';
 			}
-			
+
 				$.ajax({
 					url: 'engine/controllers/status.php',
 				   	data: {
@@ -51,7 +51,7 @@
 		});
  	});
  </script>
- 
+
 <h2 class="well" align="center" role="heading">Mural de Comunicados NextStep</h2>
 
 <?php
@@ -69,10 +69,10 @@
 		?>
         <section id="cd-timeline" class="cd-container">
 		<?php
-    
+
 		$Status = new Status();
 		$Status = $Status->Read_Geral('-1',$_SESSION['id_user']);
-		
+
 		if(count($Mensagem)!=count($Status)){
 			for ($i=0; $i < count($Mensagem) ; $i=$i+1) {
 			  $novo_status = new Status();
@@ -88,22 +88,22 @@
 			case '0':
 				$status_mensagem="Não Lida";
 				break;
-			
+
 			case '1':
 				$status_mensagem="Lida";
 				break;
-			
+
 			default:
 				$status_mensagem="Enviado";
 				break;
 			}
-		
+
 		?>
         <div class="cd-timeline-block">
             <div class="cd-timeline-img cd-picture">
                 <img src="img/cd-icon-picture.svg" alt="Picture">
             </div> <!-- cd-timeline-img -->
-            
+
             <div class="cd-timeline-content">
                 <h2><?php echo $itemRow['nome_usuario']; ?></h2>
                 <p><?php echo $itemRow['assunto_mensagem']; ?></p>
@@ -111,7 +111,7 @@
                 <button type="button" class="cd-read-more btn
                     <?php
                         if($status_mensagem==='Não Lida') {echo 'btn-warning Status';}
-                        else if($status_mensagem==='Lida') {echo 'btn-sucess Status';}
+                        else if($status_mensagem==='Lida') {echo 'btn-success Status';}
                         else{echo 'btn-info';}
                     ?>
                 "id="<?php echo $itemRow['id_status'].' '.$itemRow['id_mensagem'].' '.$_SESSION['id_user'].' '.$itemRow['status_mensagem'];?>">
