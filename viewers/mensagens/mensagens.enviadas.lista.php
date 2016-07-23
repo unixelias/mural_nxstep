@@ -41,9 +41,9 @@
 					$statusMensagem = 'Não Lida';
 					}else{
 					$statusMensagem = 'Lida';
-				}
+					}
 				$Usuario = new Usuario;
-				$Usuario = $Usuario->Read($Status['id_usuario']);
+				$Usuario = $Usuario->Read($itemRow['destinatario_mensagem']);
 		?>
 		<div class="cd-timeline-block">
 			<div class="cd-timeline-img cd-picture">
