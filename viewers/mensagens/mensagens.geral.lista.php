@@ -74,7 +74,7 @@
 		$Status = $Status->Read_Geral('-1',$_SESSION['id_user']);
 
 		if(count($Mensagem)!=count($Status)){
-			for ($i=0; $i < count($Mensagem) ; $i=$i+1) {
+			for ($i=count($Status)-1; $i < count($Mensagem) ; $i=$i+1) {
 			  $novo_status = new Status();
 			  $novo_status->SetValues('',$Mensagem[$i]['id_mensagem'],$_SESSION['id_user'],'0');
 			  $novo_status->Create();
