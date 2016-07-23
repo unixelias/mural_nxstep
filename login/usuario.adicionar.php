@@ -64,10 +64,14 @@
 <?php
 	require_once "../engine/config.php";
 ?>
+<div align="center">
+    <img  style="max-height: 100px;" src="../img/logo_nxstep_completa.svg">
+</div>
 
 <h1 align="center" role="heading">Cadastro de Usuário</h1>
 
 <br>
+
 
 <div class="container-fluid">
 <div class="col-md-3"></div>

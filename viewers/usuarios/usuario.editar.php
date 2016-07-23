@@ -112,7 +112,7 @@
 
 <h2 class="well" align="center" role="heading">Editar Usuário</h2>
 
-<br>
+
 <?php
 	$Item = new Usuario();
 	$Item = $Item->Read($_SESSION['id_user']);

@@ -78,7 +78,7 @@
 <section id="cd-timeline" class="cd-container">
     <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-picture">
-            <img src="img/cd-icon-picture.svg" alt="Picture">
+            <img src="img/logo_nxstep_branco.svg" alt="Picture">
         </div> <!-- cd-timeline-img -->
 
         <div class="cd-timeline-content">

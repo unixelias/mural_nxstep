@@ -1,6 +1,6 @@
 $(document).ready(function(e) {
 
-
+		
 		$(document).ready(function(e) {
 
 			$('#home').click(function(e) { //carregando parte de uma pagina na pagina principal

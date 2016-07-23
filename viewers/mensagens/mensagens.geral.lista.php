@@ -108,7 +108,7 @@
 		?>
         <div class="cd-timeline-block">
             <div class="cd-timeline-img cd-picture">
-                <img src="img/cd-icon-picture.svg" alt="Picture">
+                <img src="img/logo_nxstep_branco.svg" alt="Picture">
             </div> <!-- cd-timeline-img -->
 
             <div class="cd-timeline-content">
@@ -124,7 +124,7 @@
                 "id="<?php echo $itemRow['id_status'].' '.$itemRow['id_mensagem'].' '.$_SESSION['id_user'].' '.$itemRow['status_mensagem'];?>">
                 <?php echo $status_mensagem; ?>
                 </button>
-                <span class="cd-date"><?php echo ExibeData($itemRow['data_mensagem']); ?></span>
+                <span class="cd-date"><?php echo ExibeData($itemRow['data_mensagem']); ?> às <?php echo $itemRow['hora_mensagem']; ?></span>
             </div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->
         <?php
@@ -134,5 +134,6 @@
 <?php
       }
 ?>
-<script src="js/modernizr.js"></script> <!-- Modernizr -->
+<script src="js/main.js"></script>
 <script src="js/timeline.js"></script>
+<script src="js/modernizr.js"></script> <!-- Modernizr -->

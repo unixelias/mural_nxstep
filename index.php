@@ -10,7 +10,7 @@
  }
  ?>
 <!doctype html>
-<html class="no-js">
+<html class"no-js">
 <head>
     <meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,9 +19,10 @@
     <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="css/style.css">
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
-
+	<link rel="icon" type="image/png" href="img/logo_nxstep_preto.png">
     <!-- Resource style -->
     <title>Mural NxStep</title>
+    
 </head>
 
 <body>
@@ -35,14 +36,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#" id="">Sistema de Comunicações NextStep</a>
+           <img src="img/logo_mural_nxstep.svg">
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         	<ul class="nav navbar-nav navbar-right">
-            	<li><a href="#" id="home">Home </a></li>
+            	<li><a href="#" id="home"><span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> Home </a></li>
 		        <li class="dropdown">
-        			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Mensagens <span class="caret"></span></a>
+        			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Mensagens <span class="caret"></span></a>
               		<ul class="dropdown-menu">
                 		<li><a href="#" id="nova_mensagem_link">Nova Mensagem</a></li>
                 		<li><a href="#" id="mensagens_enviadas_link">Mensagens Enviadas</a></li>
@@ -50,13 +51,13 @@
               		</ul>
             	</li>
                 <li class="dropdown">
-                	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Usuários <span class="caret"></span></a>
+                	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Usuários <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                     	<li><a href="#" id="perfil_usuario_link">Meu Perfil</a></li>
                         <li><a href="#" id="perfis_usuarios_link">Lista de Usuários</a></li>
                     </ul>
 	            </li>
-            	<li><a href="#" id="getout"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair </a></li>
+            	<li><a href="#" id="getout"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Sair </a></li>
         	</ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -65,9 +66,9 @@
     <br />
     <br />
     <br />
-    <main class="container-fluid" id="loader">
-    	<div id="content"></div>
-    </main>
+   	<main class="container-fluid" id="loader"> 
+      <div id="content"></div> 
+    </main> 
     
     <footer class="mural-footer">
     	<p class="text-center footer-texto">Copyright © Next Step 2016. Todos os direitos reservados. </p>
@@ -78,6 +79,7 @@
     <script src="js/jquerymask.min.js"></script>
 	<script src="js/main.js"></script>
     <script src="js/timeline.js"></script>
+    <script src="js/load.js"></script>
 
 </body>
 </html>

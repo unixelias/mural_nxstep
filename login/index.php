@@ -19,9 +19,12 @@
     <br>
     <main class="container-fluid" id="loader_login">
 	<section class="row">
-    	<section class="col-md-3"></section>
-        <section class="col-md-6 text-center well">
-        	<h1> Login </h1>
+    	<section class="col-md-4"></section>
+        <section class="col-md-4 text-center well">
+        	<div align="center">
+    			<img  style="max-height: 70px;" src="../img/logo_nxstep_completa.svg">
+			</div>
+            <h1> Login </h1>
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon1">Email *</span>
               <input type="text" class="form-control" id="email_login" placeholder="Email" aria-describedby="basic-addon1">
@@ -35,7 +38,7 @@
             <button class="btn btn-success" id="Logar"> Enviar </button>
             <button class="btn" id="cadastro"> Cadastre-se </button>
         </section>
-        <section class="col-md-3"></section>
+        <section class="col-md-4"></section>
     </section>
   	</main>
 	<script src="../js/jquery.js"></script>

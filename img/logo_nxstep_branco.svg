@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="640.000000pt"
+   height="640.000000pt"
+   viewBox="0 0 640.000000 640.000000"
+   preserveAspectRatio="xMidYMid meet"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="logo_nxstep_branco.svg">
+  <defs
+     id="defs16">
+    <linearGradient
+       id="linearGradient4301"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4303" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4295"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4297" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4289"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4291" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4283"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4285" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4277"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4279" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4283"
+       id="linearGradient4287"
+       x1="216.77521"
+       y1="312.79999"
+       x2="362.77518"
+       y2="312.79999"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4283"
+       id="linearGradient4293"
+       x1="375.8353"
+       y1="314.39999"
+       x2="423.67279"
+       y2="314.39999"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4283"
+       id="linearGradient4299"
+       x1="375.8353"
+       y1="314.39999"
+       x2="423.67279"
+       y2="314.39999"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4283"
+       id="linearGradient4305"
+       x1="4.8000183"
+       y1="319.19998"
+       x2="636.80005"
+       y2="319.19998"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1536"
+     inkscape:window-height="801"
+     id="namedview14"
+     showgrid="true"
+     inkscape:zoom="0.61032154"
+     inkscape:cx="133.87509"
+     inkscape:cy="369.23684"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     showguides="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4267" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata4">
+Created by potrace 1.13, written by Peter Selinger 2001-2015
+<rdf:RDF>
+  <cc:Work
+     rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+  </cc:Work>
+</rdf:RDF>
+</metadata>
+  <path
+     style="fill:url(#linearGradient4299);stroke:url(#linearGradient4293);stroke-opacity:1;fill-opacity:1.0"
+     inkscape:connector-curvature="0"
+     id="path10"
+     d="m 377.0353,182.81376 c -0.4,0.38847 -0.7,59.8265 -0.7,132.1816 l 0,131.40464 23,0 22.9,0 0.6,-3.205 c 0.3,-1.65105 0.4,-60.99194 0.3,-131.79311 l -0.3,-128.68526 -22.6,-0.29136 c -12.4,-0.0971 -22.8,0.0971 -23.2,0.38849 z" />
+  <path
+     style="fill:url(#linearGradient4287);stroke:none;fill-opacity:1.0"
+     inkscape:connector-curvature="0"
+     id="path12"
+     d="m 216.7752,312.8 c 0,129 0,132 1.9,132 1,0 3.4,-1.5 5.3,-3.2 1.9,-1.8 7,-6.5 11.4,-10.3 4.3,-3.9 12.4,-11.3 17.9,-16.5 5.5,-5.2 13.1,-12.2 16.9,-15.5 3.8,-3.3 10.6,-9.4 15,-13.6 4.5,-4.2 9.9,-9.1 12.1,-11 3.1,-2.6 21.4,-19.4 32.1,-29.4 0.6,-0.5 8.29997,-7.5 17.19997,-15.5 11.5,-10.2 16.2,-15 16.2,-16.6 0,-2.2 -6.3,-8.6 -26,-26.3 -5.8,-5.2 -16.09997,-14.7 -22.99997,-21.2 -6.9,-6.4 -14.1,-13 -16,-14.5 -1.9,-1.6 -9.2,-8.1 -16.1,-14.4 -6.9,-6.3 -19.5,-17.8 -28,-25.6 -8.5,-7.7 -19.4,-17.7 -24.3,-22.2 -5,-4.5 -9.8,-8.2 -10.8,-8.2 -1.7,0 -1.8,5.5 -1.8,132 z" />
+  <circle
+     style="fill:none;fill-rule:evenodd;stroke:url(#linearGradient4305);stroke-width:31.00665283;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="logo_nxstep_pb"
+     cx="320.80002"
+     cy="319.19998"
+     r="300.49667" />
+  <rect
+     style="fill:none;stroke-width:40;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect4265"
+     width="216.27942"
+     height="270.02161"
+     x="201.86081"
+     y="182.53622" />
+</svg>

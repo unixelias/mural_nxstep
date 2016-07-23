@@ -59,8 +59,8 @@
 </script>
 <!--Breadrumb-->
 <ol class="breadcrumb">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Mensagens</a></li>
+<li><a href="#" id="home">Home</a></li>
+    <li><a href="#" id="home">Mensagens</a></li>
     <li class="active">Mensagens Recebidas</li>
 </ol>
 <h2 class="well" align="center" role="heading">Mensagens Recebidas</h2>
@@ -109,7 +109,7 @@
 
 			<div class="cd-timeline-block">
 				<div class="cd-timeline-img cd-picture">
-					<img src="img/cd-icon-picture.svg" alt="Picture">
+					<img src="img/logo_nxstep_branco.svg" alt="Picture">
 				</div> <!-- cd-timeline-img -->
                 <div class="cd-timeline-content">
                     <h2>Recebida de: <button class="btn btn-sm btn-info"><?php echo $itemRow['nome_usuario']; ?></button></h2>
@@ -123,7 +123,7 @@
                         id="<?php echo $itemRow['id_status'].' '.$itemRow['id_mensagem'].' '.$_SESSION['id_user'].' '.$itemRow['status_mensagem'];?>">
                         <?php echo $status_mensagem; ?>
                     </button>
-                    <span class="cd-date"><?php echo ExibeData($itemRow['data_mensagem']); ?></span>
+                    <span class="cd-date"><?php echo ExibeData($itemRow['data_mensagem']); ?> às <?php echo $itemRow['hora_mensagem']; ?></span>
                 </div> <!-- cd-timeline-content -->
 			</div> <!-- cd-timeline-block -->
         <?php
@@ -136,3 +136,4 @@
 
 <script src="js/main.js"></script>
 <script src="js/timeline.js"></script>
+<script src="js/menu.js"></script>
