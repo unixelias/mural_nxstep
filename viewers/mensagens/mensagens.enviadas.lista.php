@@ -12,7 +12,7 @@
     <li class="active">Mensagens Enviadas</li>
 </ol>
 
-<h2 class="well" align="center" role="heading">Mensagens enviadas por <?php echo $user['nome_usuario']; ?></h2>
+<h2 class="well" align="center" role="heading">Mensagens enviadas por <?php echo $_SESSION['name_user']; ?></h2>
 
 <?php
 	require_once "../../engine/config.php";
@@ -32,11 +32,11 @@
         <section id="cd-timeline" class="cd-container">
 		<?php
 			foreach($Mensagem as $itemRow){
-				
+
 				$msg = $itemRow;
 				$Status = new Status; //Instancia Status
-				$Status = $Status->ReadMensagem($msg['id_mensagem']);			
-				
+				$Status = $Status->ReadMensagem($msg['id_mensagem']);
+
 				if ($Status['status_mensagem'] === '0'){
 					$statusMensagem = 'Não Lida';
 					}else{
