@@ -73,14 +73,21 @@
 		$Status = new Status();
 		$Status = $Status->Read_Geral('-1',$_SESSION['id_user']);
 
-		if(count($Mensagem)!=count($Status)){
-			for ($i=count($Status)-1; $i < count($Mensagem) ; $i=$i+1) {
-			  $novo_status = new Status();
-			  $novo_status->SetValues('',$Mensagem[$i]['id_mensagem'],$_SESSION['id_user'],'0');
-			  $novo_status->Create();
-			}
-		}
+    if(count($Mensagem) != count($Status)){
+    			for ($i=0; $i < count($Mensagem)-count($Status) ; $i = $i+1) {
+    			  $novo_status = new Status();
+            if($Mensagem[$i]['id_usuario']===$_SESSION['id_user']){ //Se quem enviou foi eu o status é 3
+              $novo_status->SetValues('',$Mensagem[$i]['id_mensagem'],$_SESSION['id_user'],'3');
+            }
+            else {
+              $novo_status->SetValues('',$Mensagem[$i]['id_mensagem'],$_SESSION['id_user'],'0');
+              //Se foi outra pessoa o status é 0: Não lido
+            }
 
+    			  $novo_status->Create();
+
+    			}
+    		}
 		$Mensagens = new Mensagem();
 		$Mensagens = $Mensagens->ReadAll_Geral_Status('-1',$_SESSION['id_user']);
 		foreach ($Mensagens as $itemRow) {
