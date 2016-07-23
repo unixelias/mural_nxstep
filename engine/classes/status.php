@@ -221,30 +221,42 @@
 			$DB->close();
 			return $realData;
 		}
-		
+
 		//lê a mensagem a partir do status
-		public function ReadMensagem($id_mensagem) {
+		public function ReadMensagem($id_mensagem,$id_destinatario) {
 			$sql = "
-				SELECT
-					 t1.id_status,
-					 t1.id_mensagem,
-					 t1.id_usuario,
-					 t1.status_mensagem
+			SELECT
+				t1.id_status,
+				t1.id_mensagem,
+				t1.id_usuario,
+				t1.status_mensagem
 				FROM
-					status AS t1
+				`status` AS t1
 				WHERE
-					t1.id_mensagem  = '$id_mensagem'
+				t1.id_mensagem = '$id_mensagem' AND
+				t1.id_usuario='$id_destinatario'
 			";
-			
-			
-			$DB = new DB();
-			$DB->open();
-			$Data = $DB->fetchData($sql);
-			
-			$DB->close();
-			return $Data[0]; 
-		}
-		
+
+
+						$DB = new DB();
+						$DB->open();
+						$Data = $DB->fetchData($sql);
+						$realData;
+						if($Data ==NULL){
+							$realData = $Data;
+						}
+						else{
+
+							foreach($Data as $itemData){
+								if(is_bool($itemData)) continue;
+								else{
+									$realData[] = $itemData;
+								}
+							}
+						}
+						$DB->close();
+						return $realData;
+					}
 
 		/*
 			--------------------------------------------------

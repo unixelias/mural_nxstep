@@ -17,10 +17,10 @@
 <?php
 	require_once "../../engine/config.php";
 
-	$user = new Usuario;
-	$user = $user->Read($_SESSION['id_user']);
+
 	$Mensagem = new Mensagem; //instancia Mensagem
-	$Mensagem = $Mensagem->ReadUserEnv_JointInfo($user['id_usuario']); //lê todos os registros no BD
+	$Mensagem = $Mensagem->ReadAll_Join_Enviadas($_SESSION['id_user']); //lê todos os registros no BD
+
 
 	if(empty($Mensagem)){
 		?>
@@ -31,36 +31,60 @@
 		?>
         <section id="cd-timeline" class="cd-container">
 		<?php
+
 			foreach($Mensagem as $itemRow){
 
-				$msg = $itemRow;
 				$Status = new Status; //Instancia Status
-				$Status = $Status->ReadMensagem($msg['id_mensagem']);
-
-				if ($Status['status_mensagem'] === '0'){
+				$Status = $Status->ReadMensagem($itemRow['id_mensagem'],$itemRow['destinatario_mensagem']);
+        if(empty($Status)){
+          $statusMensagem = "Não Lida";
+        }
+				else if ($Status['status_mensagem'] === '0'){
 					$statusMensagem = 'Não Lida';
-					}else{
+					}
+        else{
 					$statusMensagem = 'Lida';
 					}
-				$Usuario = new Usuario;
-				$Usuario = $Usuario->Read($itemRow['destinatario_mensagem']);
-		?>
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-picture">
-				<img src="img/cd-icon-picture.svg" alt="Picture">
-			</div> <!-- cd-timeline-img -->
 
-			<div class="cd-timeline-content">
-				<h2>Para: <?php echo $Usuario['nome_usuario']; ?></h2>
-                <p><?php echo $itemRow['assunto_mensagem']; ?></p>
-				<p><?php echo $itemRow['conteudo_mensagem']; ?></p>
-				<button type="button" class="cd-read-more btn
-					<?php
-                        if($statusMensagem==='Não Lida') {echo 'btn-warning Status';}
-                        else if($statusMensagem==='Lida') {echo 'btn-sucess Status';}
-                    ?>">
-                	<?php echo $statusMensagem; ?>
-                </button>
+?>
+
+<div class="cd-timeline-block">
+  <div class="cd-timeline-img cd-picture">
+    <img src="img/cd-icon-picture.svg" alt="Picture">
+  </div> <!-- cd-timeline-img -->
+
+  <div class="cd-timeline-content">
+
+
+<?php
+
+        if($itemRow['destinatario_mensagem'] === -1){
+          ?>
+               <h2>Para: <button class="btn btn-default">Todos</button></h2>
+               <p><?php echo $itemRow['assunto_mensagem']; ?></p>
+               <p><?php echo $itemRow['conteudo_mensagem']; ?></p>
+                <button type="button" class="cd-read-more btn-default">--</button>
+        <?php
+        }
+        else {
+  				$Usuario = new Usuario;
+  				$Usuario = $Usuario->Read($itemRow['destinatario_mensagem']);
+          ?>
+              <h2>Para: <button class="btn btn-info"><?php echo $Usuario['nome_usuario']; ?></button></h2>
+              <p><?php echo $itemRow['assunto_mensagem']; ?></p>
+              <p><?php echo $itemRow['conteudo_mensagem']; ?></p>
+               <button type="button" class="cd-read-more btn
+               <?php
+                      if($statusMensagem==='Não Lida') {echo 'btn-warning Status';}
+                      else if($statusMensagem==='Lida') {echo 'btn-sucess Status';}
+                 ?>">
+               <?php echo $statusMensagem; ?>
+              </button>
+        <?php
+        }
+		?>
+
+
                 <span class="cd-date"><?php echo $itemRow['data_mensagem']; ?></span>
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->

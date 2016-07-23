@@ -72,7 +72,6 @@
 
 			";
 
-
 			$DB = new DB();
 			$DB->open();
 			$Data = $DB->fetchData($sql);

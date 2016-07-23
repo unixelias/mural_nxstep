@@ -256,22 +256,25 @@
 
 			public function ReadAll_Join_Enviadas($id_remetente) {
 					$sql = "
-					SELECT
-							t1.id_mensagem,
-							t1.id_usuario,
-							t1.destinatario_mensagem,
-							t2.nome_usuario,
-							t2.id_usuario,
-							t1.assunto_mensagem,
-							t1.conteudo_mensagem,
-							t1.hora_mensagem,
-							t1.data_mensagem
-					FROM
-							mensagem AS t1
-							INNER JOIN usuario AS t2 ON t1.id_usuario = t2.id_usuario
-					WHERE
-							t1.id_usuario = '4'
-							ORDER BY data_mensagem DESC, hora_mensagem DESC
+          SELECT
+              t1.id_mensagem,
+              t1.id_usuario,
+              t1.destinatario_mensagem,
+              t2.nome_usuario,
+              t2.id_usuario,
+              t1.assunto_mensagem,
+              t1.conteudo_mensagem,
+              t1.hora_mensagem,
+              t1.data_mensagem
+              FROM
+              mensagem AS t1
+              INNER JOIN usuario AS t2 ON t1.id_usuario = t2.id_usuario
+              WHERE
+              t1.id_usuario = '$id_remetente'
+              ORDER BY
+              t1.data_mensagem DESC,
+              t1.hora_mensagem DESC
+
 
 					";
 
