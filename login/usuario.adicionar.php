@@ -65,56 +65,59 @@
 	require_once "../engine/config.php";
 ?>
 
-<ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Gerenciar Usuários</a></li>
-  <li class="active">Adicionar Usuário</li>
-</ol>
-
-<h1>
-	Cadastro de Usuário
-</h1>
+<h1 align="center" role="heading">Cadastro de Usuário</h1>
 
 <br>
 
-<section class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-warning" id="Voltar"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Voltar</button>
-
-  <button type="button" class="btn btn-success" id="Salvar"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Salvar</button>
-</section>
-
-<br><br>
-
-<section class="row formAdicionarDados">
-	<section class="col-md-4">
-    	<div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">Nome *</span>
-          <input type="text" class="form-control" id="nome_usuario" placeholder="Nome" aria-describedby="basic-addon1">
-        </div>
+<div class="container-fluid">
+<div class="col-md-3"></div>
+<div class="col-md-6" align="justify">
+    <section class="row formAdicionarDados">
+        <section class="col-md-12">
+            <div class="input-group">
+              	<span class="input-group-addon" id="basic-addon1">Nome *</span>
+              	<input type="text" class="form-control" id="nome_usuario" placeholder="Nome" aria-describedby="basic-addon1">
+            </div>
+        </section>
     </section>
-
-    <section class="col-md-4">
-    	<div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">Email *</span>
-          <input type="text" class="form-control" id="email_usuario" placeholder="Email" aria-describedby="basic-addon1">
-        </div>
+    <br>
+    <section class="row formAdicionarDados">
+        <section class="col-md-12">
+            <div class="input-group">
+              	<span class="input-group-addon" id="basic-addon1">Email *</span>
+              	<input type="text" class="form-control" id="email_usuario" placeholder="Email" aria-describedby="basic-addon1">
+            </div>
+        </section>
     </section>
-
-    <section class="col-md-4">
-    	<div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">Matrícula *</span>
-          <input type="text" class="form-control" id="matricula_usuario" placeholder="Matrícula" aria-describedby="basic-addon1">
-        </div>
+    <br>
+    <section class="row formAdicionarDados">
+   		<section class="col-md-12">
+            <div class="input-group">
+              	<span class="input-group-addon" id="basic-addon1">Matrícula *</span>
+              	<input type="text" class="form-control" id="matricula_usuario" placeholder="Matrícula" aria-describedby="basic-addon1">
+            </div>
+        </section>
     </section>
-</section>
-
-<br>
-
-<section class="row formAdicionarDados">
-	<section class="col-md-4">
-    	<div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">Senha *</span>
-          <input type="password" class="form-control" id="senha_usuario" placeholder="Senha" aria-describedby="basic-addon1">
-        </div>
+    <br>
+    <section class="row formAdicionarDados">
+    	<section class="col-md-12">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Senha *</span>
+                <input type="password" class="form-control" id="senha_usuario" placeholder="Senha" aria-describedby="basic-addon1">
+            </div>
+        </section>
     </section>
-</section>
+    <br>
+    <section class="row formAdicionarDados">
+        <div class="col-md-12" align="center"> 
+        <section class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-warning" id="Voltar">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Voltar</button>
+            <button type="button" class="btn btn-success" id="Salvar">
+            <span class="glyphicon glyphicon-save" aria-hidden="true"></span> Salvar</button>
+        </section>
+        </div>
+	</section>
+</div>
+<div class="col-md-3"></div>
+</div>

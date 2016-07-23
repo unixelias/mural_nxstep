@@ -106,70 +106,75 @@
 
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
-  <li><a href="#">Gerenciar Usuários</a></li>
-  <li class="active">Editar Dados</li>
+  <li><a href="#">Usuários</a></li>
+  <li class="active">Editar Meus Dados</li>
 </ol>
 
-<h1>
-	Editar Usuário
-</h1>
+<h2 class="well" align="center" role="heading">Editar Usuário</h2>
 
 <br>
+<?php
+	$Item = new Usuario();
+	$Item = $Item->Read($_SESSION['id_user']);
+	//var_dump($Item);
+?>
 
-<section class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-warning" id="Voltar"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Voltar</button>
-  <button type="button" class="btn btn-success" id="Salvar"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Salvar</button>
-	<button type="button" class="btn btn-danger" id="Excluir"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Excluir</button>
-</section>
+<div class="container-fluid">
+<div class="col-md-3"></div>
+<div class="col-md-6" align="justify">
+	<section class="row formAdicionarDados">
+		<section class="col-md-12">
+    		<div class="input-group">
+          		<span class="input-group-addon" id="basic-addon1">Nome *</span>
+          		<input type="text" class="form-control" id="nome_usuario" placeholder="Nome" aria-describedby="basic-addon1" value="<?php echo $Item['nome_usuario'];?>">
+        	</div>
+    	</section>
+	</section>
 
-<br><br>
+	<br>
 
-	<?php
-		$Item = new Usuario();
-		$Item = $Item->Read($_SESSION['id_user']);
-		//var_dump($Item);
-	?>
+	<section class="row formAdicionarDados">
+    	<section class="col-md-12">
+    		<div class="input-group">
+          		<span class="input-group-addon" id="basic-addon1">Email *</span>
+          		<input type="text" class="form-control" id="email_usuario" placeholder="Email" aria-describedby="basic-addon1" value="<?php echo $Item['email_usuario'];?>">
+        	</div>
+    	</section>
+	</section>
 
-<section class="row formAdicionarDados">
-	<section class="col-md-4">
-    	<div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">Nome *</span>
-          <input type="text" class="form-control" id="nome_usuario" placeholder="Nome" aria-describedby="basic-addon1" value="<?php echo $Item['nome_usuario'];?>">
-        </div>
+	<br>
+
+	<section class="row formAdicionarDados">
+    	<section class="col-md-12">
+    		<div class="input-group">
+          		<span class="input-group-addon" id="basic-addon1">Matrícula *</span>
+          		<input type="text" class="form-control" id="matricula_usuario" placeholder="Email" aria-describedby="basic-addon1" value="<?php echo $Item['matricula_usuario'];?>">
+        	</div>
+    	</section>
+	</section>
+
+	<br>
+
+	<section class="row formAdicionarDados">
+		<section class="col-md-12">
+    		<div class="input-group">
+          		<span class="input-group-addon" id="basic-addon1">Senha *</span>
+          		<input type="password" class="form-control" id="senha_usuario" placeholder="Senha" aria-describedby="basic-addon1" value="<?php echo $Item['senha_usuario'];?>">
+        	</div>
+    	</section>
+	</section>
+    <br>
+    <div class="col-md-12" align="center">    
+    <section class="btn-group" align="center" role="group" aria-label="...">
+      	<button type="button" class="btn btn-warning" id="Voltar">
+        	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Voltar</button>
+     	<button type="button" class="btn btn-danger" id="Excluir">
+        	<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Excluir</button>
+        <button type="button" class="btn btn-success" id="Salvar">
+        	<span class="glyphicon glyphicon-save" aria-hidden="true"></span> Salvar</button>
     </section>
-</section>
-
-<br>
-
-<section class="row formAdicionarDados">
-    <section class="col-md-4">
-    	<div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">Email *</span>
-          <input type="text" class="form-control" id="email_usuario" placeholder="Email" aria-describedby="basic-addon1" value="<?php echo $Item['email_usuario'];?>">
-        </div>
-    </section>
-</section>
-
-<br>
-
-<section class="row formAdicionarDados">
-    <section class="col-md-4">
-    	<div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">Matrícula *</span>
-          <input type="text" class="form-control" id="matricula_usuario" placeholder="Email" aria-describedby="basic-addon1" value="<?php echo $Item['matricula_usuario'];?>">
-        </div>
-    </section>
-</section>
-
-<br>
-
-<section class="row formAdicionarDados">
-	<section class="col-md-4">
-    	<div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">Senha *</span>
-          <input type="password" class="form-control" id="senha_usuario" placeholder="Senha" aria-describedby="basic-addon1" value="<?php echo $Item['senha_usuario'];?>">
-        </div>
-    </section>
-</section>
-
-<input type="hidden" id="id_usuario" value="<?php echo $_SESSION['id_user'];?>">
+    </div>
+	<input type="hidden" id="id_usuario" value="<?php echo $_SESSION['id_user'];?>">
+</div>
+<div class="col-md-3"></div>
+</div>

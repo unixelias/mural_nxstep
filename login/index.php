@@ -13,9 +13,10 @@
 
 </head>
 
-<h2 class="well" align="center" role="heading">Entrar no Sistema</h2>
 <body>
-	<br>
+	<h2 class="well" align="center" role="heading">Entrar no Sistema</h2>
+	
+    <br>
     <main class="container-fluid" id="loader_login">
 	<section class="row">
     	<section class="col-md-3"></section>

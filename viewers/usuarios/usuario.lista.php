@@ -15,12 +15,10 @@
 
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
-  <li class="active">Gerenciar Usuários</li>
+  <li class="active">Usuários</li>
 </ol>
 
-<h1>
-	Lista de Usuários Cadastrados
-</h1>
+<h2 class="well" align="center" role="heading">Lista de Usuários Cadastrados</h2>
 
 <div id="blu">
 
@@ -28,12 +26,12 @@
 <br>
 
 <section class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default" id="Atualizar"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Atualizar</button>
+  <button type="button" class="btn btn-info" id="Atualizar">
+  <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Atualizar</button>
 </section>
 
-
-
 <br><br>
+
 <pre>
 <?php
 	$Item = new Usuario();
@@ -63,11 +61,11 @@
 
 						foreach($Item as $itemRow){
 					?>
-                            <tr class=" <?php if($_SESSION['id_user']===$itemRow['id_usuario']){echo 'danger';}?>">
-                                <td><?php echo $itemRow['nome_usuario'];?></td>
-																<td><?php echo $itemRow['email_usuario']; ?></td>
-                                <td><?php echo $itemRow['matricula_usuario']; ?></td>
-                            </tr>
+                        <tr class=" <?php if($_SESSION['id_user']===$itemRow['id_usuario']){echo 'danger';}?>">
+                            <td><?php echo $itemRow['nome_usuario'];?></td>
+                                                            <td><?php echo $itemRow['email_usuario']; ?></td>
+                            <td><?php echo $itemRow['matricula_usuario']; ?></td>
+                        </tr>
                     <?php
 						}
 					?>
