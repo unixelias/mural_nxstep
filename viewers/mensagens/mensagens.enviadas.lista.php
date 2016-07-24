@@ -52,13 +52,13 @@
 			
                 <div class="cd-timeline-content">
                 <?php
-                    if($itemRow['destinatario_mensagem'] === -1){
+                    if($itemRow['destinatario_mensagem'] === '-1'){
                     ?>
-                        <h2>Para: <button class="btn btn-default">Todos</button></h2>
+                        <h2>Para: <button class="btn btn-primary">Todos</button></h2>
                         <p><?php echo $itemRow['assunto_mensagem']; ?></p>
                         <p><?php echo $itemRow['conteudo_mensagem']; ?></p>
-                        <button type="button" class="cd-read-more btn-default">--</button>
-                        <?php
+                        <button type="button" class="cd-read-more btn btn-default Status">--</button>
+                  <?php
                     }
                     else {
                         $Usuario = new Usuario;
@@ -68,8 +68,8 @@
                           <p><?php echo $itemRow['conteudo_mensagem']; ?></p>
                           <button type="button" class="cd-read-more btn
                           <?php
-                            if($statusMensagem==='Não Lida') {echo 'btn-warning Status';}
-                            else if($statusMensagem==='Lida') {echo 'btn-sucess Status';}
+                            if($statusMensagem==='Não Lida') {echo 'btn-warning';}
+                            else if($statusMensagem==='Lida') {echo 'btn-success';}
                           ?>"><?php echo $statusMensagem; ?></button>
                     <?php
                     }

@@ -118,7 +118,7 @@
                     <button type="button" class="cd-read-more btn
                         <?php
                             if($status_mensagem==='Não Lida') {echo 'btn-warning Status';}
-                            else if($status_mensagem==='Lida') {echo 'btn-sucess Status';}
+                            else if($status_mensagem==='Lida') {echo 'btn-success Status';}
                         ?>"
                         id="<?php echo $itemRow['id_status'].' '.$itemRow['id_mensagem'].' '.$_SESSION['id_user'].' '.$itemRow['status_mensagem'];?>">
                         <?php echo $status_mensagem; ?>

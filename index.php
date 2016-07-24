@@ -10,7 +10,7 @@
  }
  ?>
 <!doctype html>
-<html class"no-js">
+<html>
 <head>
     <meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,7 +52,7 @@
             	</li>
                 <li class="dropdown">
                 	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Usuários <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu ">
                     	<li><a href="#" id="perfil_usuario_link">Meu Perfil</a></li>
                         <li><a href="#" id="perfis_usuarios_link">Lista de Usuários</a></li>
                     </ul>
@@ -62,6 +62,7 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+    <br />
     <br />
     <br />
     <br />

@@ -509,6 +509,7 @@ header h1 {
 	background:#000000;
 	position:fixed;
 	bottom:0;
+	font-family: "Droid Serif", serif;
 }
 
 
@@ -522,9 +523,9 @@ header h1 {
   align-content:center;
 }
 .navbar-header>img {
-  padding: 15px; /* firefox bug fix */
+  padding: 9px; /* firefox bug fix */
   width: auto;
-  max-height: 60px;
+  max-height: 65px;
 }
 
 .navbar-collapse {

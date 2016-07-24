@@ -10,13 +10,13 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.0"
-   width="5945.543pt"
-   height="1258.0199pt"
-   viewBox="0 0 5945.5431 1258.02"
+   width="1512.3558pt"
+   height="260pt"
+   viewBox="0 0 1512.3559 260.00003"
    preserveAspectRatio="xMidYMid meet"
    id="svg2"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="logo_mural_nxstep.svg">
+   sodipodi:docname="logo_mural_nxstep_p.svg">
   <title
      id="title5839">Logo NextStep</title>
   <defs
@@ -371,7 +371,7 @@
   <sodipodi:namedview
      pagecolor="#000000"
      bordercolor="#ffffff"
-     borderopacity="0"
+     borderopacity="0.95294118"
      objecttolerance="10000"
      gridtolerance="10000"
      guidetolerance="10000"
@@ -380,10 +380,10 @@
      inkscape:window-width="1536"
      inkscape:window-height="801"
      id="namedview14"
-     showgrid="true"
-     inkscape:zoom="0.076290193"
-     inkscape:cx="456.65838"
-     inkscape:cy="-858.69321"
+     showgrid="false"
+     inkscape:zoom="0.30516077"
+     inkscape:cx="405.63128"
+     inkscape:cy="35.199079"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -392,12 +392,13 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0">
+     fit-margin-bottom="0"
+     inkscape:showpageshadow="true">
     <inkscape:grid
        type="xygrid"
        id="grid4267"
-       originx="3356.7906"
-       originy="201.61984" />
+       originx="1140.1974"
+       originy="-267.39016" />
   </sodipodi:namedview>
   <metadata
      id="metadata4">
@@ -423,17 +424,18 @@ Created by potrace 1.13, written by Peter Selinger 2001-2015
      id="layer2"
      inkscape:label="sombra"
      style="display:inline"
-     transform="translate(3357.094,180.30988)" />
+     transform="translate(1140.5006,-348.70012)" />
   <g
      inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="base"
      style="display:inline"
-     transform="translate(3357.094,180.30988)">
+     transform="translate(1140.5006,-348.70012)">
     <g
        id="g5096"
        onmouseover="opacity: 0.5;
-">
+"
+       transform="matrix(0.254368,0,0,0.254368,-286.56325,358.56518)">
       <rect
          y="598.93628"
          x="3558.6511"
