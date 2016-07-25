@@ -21,6 +21,7 @@
     					alert('Erro na conexão com o servidor. Tente novamente em alguns segundos.');
     			   },
     			   success: function(data) {
+          
     					if(data === 'true'){
     						document.location.href = '../';
     					}

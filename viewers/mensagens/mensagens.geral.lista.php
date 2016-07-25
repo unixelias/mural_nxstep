@@ -39,6 +39,7 @@
 						alert('Erro na conexão com o servidor. Tente novamente em alguns segundos.');
 					},
 					success: function(data) {
+
 						if(data === 'true'){
 							$('#loader').load('viewers/mensagens/mensagens.geral.lista.php');
 						}
@@ -49,6 +50,48 @@
 				   type: 'POST'
 			});
 		});
+
+    $('.Excluir').click(function(e) {
+      e.preventDefault();
+      //loader
+
+      var id = $(this).attr('id');
+      console.log(id);
+      if(confirm("Tem certeza que deseja excluir esta mensagem?")){
+        $.ajax({
+           url: 'engine/controllers/mensagem.php',
+           data: {
+            id_mensagem : id,
+            id_usuario : null,
+            destinatario_mensagem : null,
+            assunto_mensagem: null,
+            conteudo_mensagem : null,
+            hora_mensagem : null,
+            data_mensagem : null,
+            action: 'delete'
+           },
+
+           error: function() {
+            alert('Erro na conexão com o servidor. Tente novamente em alguns segundos.');
+           },
+           success: function(data) {
+             console.log(data);
+            if(data === 'true'){
+              alert('Item deletado com sucesso!');
+              $('#loader').load('viewers/mensagens/mensagens.geral.lista.php');
+            }
+            else{
+              alert('Erro ao conectar com banco de dados. Aguarde e tente novamente em alguns instantes.');
+            }
+           },
+
+           type: 'POST'
+        });
+      }
+
+    });
+
+
  	});
  </script>
 
@@ -57,7 +100,7 @@
 <?php
 	require_once "../../engine/config.php";
 
-	$Mensagem = new Mensagem; //instancia Mensagem
+	$Mensagem = new Mensagem(); //instancia Mensagem
 	$Mensagem = $Mensagem->ReadAll_Join_Destinatario('-1'); //lê todos os registros no
 
 	if(empty($Mensagem)){
@@ -124,6 +167,15 @@
                 "id="<?php echo $itemRow['id_status'].' '.$itemRow['id_mensagem'].' '.$_SESSION['id_user'].' '.$itemRow['status_mensagem'];?>">
                 <?php echo $status_mensagem; ?>
                 </button>
+                <?php
+                  if($itemRow['id_usuario']===$_SESSION['id_user']){
+
+                    ?>
+                      <button type="button" class="Excluir cd-read-more btn btn-danger" id="<?php echo $itemRow['id_mensagem']; ?>">Excluir</button>
+                    <?php
+
+                    }
+                 ?>
                 <span class="cd-date"><?php echo ExibeData($itemRow['data_mensagem']); ?> às <?php echo $itemRow['hora_mensagem']; ?></span>
             </div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->

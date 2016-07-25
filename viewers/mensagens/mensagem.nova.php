@@ -7,7 +7,7 @@
 		$('#Voltar').click(function(e) {
 			e.preventDefault();
 			//loader
-			$('#loader').load('viewers/cadastro/trainee.lista.php');
+			$('#loader').load('viewers/mensagens/mensagens.geral.lista.php');
 		});
 
 		$('#Salvar').click(function(e) {
@@ -142,7 +142,7 @@
             <div class="row container-fluid" align="right">
                 <section class="btn-group" role="group" aria-label="...">
                 	<button type="button" class="btn btn-warning" id="Voltar"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Voltar</button>
-                	<button type="button" class="btn btn-success" id="Salvar"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Salvar</button>
+                	<button type="button" class="btn btn-success" id="Salvar"><span class="glyphicon glyphicon-send" aria-hidden="true"></span>  Salvar</button>
                 </section>
             </div>
             <span class="cd-date"><?php echo date('d/m/Y')?></span>
