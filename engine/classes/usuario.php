@@ -41,7 +41,7 @@
 						  )
 				VALUES
 					(
-				 			'$this->id_usuario',
+				 			NULL,
 				 			'$this->nome_usuario',
 				 			'$this->email_usuario',
 				 			'$this->senha_usuario',

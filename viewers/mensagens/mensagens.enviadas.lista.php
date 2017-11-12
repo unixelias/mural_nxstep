@@ -9,7 +9,7 @@
        //loader
 
        var id = $(this).attr('id');
-      
+
        if(confirm("Tem certeza que deseja excluir esta mensagem?")){
          $.ajax({
             url: 'engine/controllers/mensagem.php',

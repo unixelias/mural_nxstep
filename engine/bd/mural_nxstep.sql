@@ -12,6 +12,9 @@ File Encoding         : 65001
 
 Date: 2016-07-25 15:32:03
 */
+CREATE DATABASE IF NOT EXISTS mural_nxstep DEFAULT CHARSET=utf8;
+
+USE mural_nxstep;
 
 SET FOREIGN_KEY_CHECKS=0;
 
@@ -190,7 +193,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `status`(IN `id` int)
 BEGIN
 	DECLARE id_mens INT(11);
 	SELECT DISTINCT MAX(id_mensagem) INTO id_mens FROM mensagem;
-	
+
 	INSERT INTO status (
 			id_mensagem,
 			id_usuario

@@ -15,14 +15,14 @@
     <meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="css/style.css">
-    <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='fonts' rel='stylesheet' type='text/css'>
 	<link rel="icon" type="image/png" href="img/logo_nxstep_preto.png">
     <!-- Resource style -->
     <title>Mural NxStep</title>
-    
+
 </head>
 
 <body>
@@ -67,15 +67,15 @@
     <br />
     <br />
     <br />
-   	<main class="container-fluid" id="loader"> 
-      <div id="content"></div> 
-    </main> 
-    
+   	<main class="container-fluid" id="loader">
+      <div id="content"></div>
+    </main>
+
     <footer class="mural-footer">
     	<p class="text-center footer-texto">Copyright © Next Step 2016. Todos os direitos reservados. </p>
     </footer>
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.js"></script>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/jquerymask.min.js"></script>
 	<script src="js/main.js"></script>

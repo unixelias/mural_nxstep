@@ -31,9 +31,9 @@
 					$.ajax({
 					   url: 'engine/controllers/mensagem.php',
 					   data: {
-						   id_mensagem : null,
+						  id_mensagem : null,
 							id_usuario : id_usuario,
-              				destinatario_mensagem : destinatario_mensagem,
+              destinatario_mensagem : destinatario_mensagem,
 							assunto_mensagem : assunto_mensagem,
 							conteudo_mensagem : conteudo_mensagem,
 							hora_mensagem : hora_mensagem,
@@ -44,7 +44,7 @@
 							alert('Erro na conexão com o servidor. Tente novamente em alguns segundos.');
 					   },
 					   success: function(data) {
-              			// console.log(data);
+              			 //console.log(data);
 							if(data === 'true'){
 								alert('Item adicionado com sucesso!');
 								$('#loader').load('viewers/mensagens/mensagens.geral.lista.php');

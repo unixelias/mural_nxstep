@@ -38,7 +38,7 @@
 						  )
 				VALUES
 					(
-				 			'$this->id_status',
+				 			NULL,
 				 			'$this->id_mensagem',
 				 			'$this->id_usuario',
 				 			'$this->status_mensagem'

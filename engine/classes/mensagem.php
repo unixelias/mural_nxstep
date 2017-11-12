@@ -47,7 +47,7 @@
 						  )
 				VALUES
 					(
-				 			'$this->id_mensagem',
+				 			NULL,
 				 			'$this->id_usuario',
 				 			'$this->destinatario_mensagem',
 				 			'$this->assunto_mensagem',

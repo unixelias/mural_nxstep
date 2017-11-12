@@ -1,0 +1,23 @@
+{
+  "name": "mural_nxstep",
+  "version": "1.0.0",
+  "description": "Trabalho final do curso de desenvolvimento web, ministrado pela Empresa Júnior Next Step",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unixelias/mural_nxstep.git"
+  },
+  "author": "Elias Alves, Gabriel Rufino, Natan Macedo",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/unixelias/mural_nxstep/issues"
+  },
+  "homepage": "https://github.com/unixelias/mural_nxstep#readme",
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}

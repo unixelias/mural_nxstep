@@ -9,13 +9,13 @@
     <meta charset="utf-8">
     <title>Mural NextStep :: Login</title>
 
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
 
 </head>
 
 <body>
 	<h2 class="well" align="center" role="heading">Entrar no Sistema</h2>
-	
+
     <br>
     <main class="container-fluid" id="loader_login">
 	<section class="row">
@@ -41,8 +41,8 @@
         <section class="col-md-4"></section>
     </section>
   	</main>
-	<script src="../js/jquery.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
+	<script src="../node_modules/jquery/dist/jquery.js"></script>
+	<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../js/login.js"></script>
 </body>
 </html>
